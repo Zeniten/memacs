@@ -76,7 +76,6 @@
 ;; TODO Is there any difference between (vertico-mode 1) and this?
 ;; Enable vertico
 (use-package vertico
-  :ensure t
   :config
   (vertico-mode 1) 
 
@@ -281,8 +280,7 @@
   :init
   (winum-mode 1))
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 ;; Evil
 (use-package evil
@@ -293,7 +291,6 @@
   (evil-mode 1))
 
 (use-package evil-collection
-  :ensure t
   :after evil
   :init
   (evil-collection-init))
@@ -332,8 +329,7 @@
    )
 
 ;; Lisp
-(use-package smartparens-mode
-  :ensure smartparens  ;; install the package
+(use-package smartparens
   :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
   :config
   ;; load default config
