@@ -52,6 +52,12 @@
 
 (load-theme 'deeper-blue t)
 
+;; Revert buffers when the underlying file has changed
+(global-auto-revert-mode 1)
+
+;; Revert Dired and other buffers
+(setq global-auto-revert-non-file-buffers t)
+
 ;; use use-package
 (require 'use-package)
 (setq use-package-always-ensure t) ; download package if not there
