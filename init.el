@@ -287,9 +287,10 @@
 ;; Evil
 (use-package evil
   :init
-  (evil-mode)
+  (setq evil-want-keybinding nil)
   :config
-  (evil-set-undo-system 'undo-redo))
+  (evil-set-undo-system 'undo-redo)
+  (evil-mode 1))
 
 (use-package evil-collection
   :ensure t
