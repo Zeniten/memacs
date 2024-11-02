@@ -274,12 +274,12 @@
 
 (use-package which-key
   :init
-  (which-key-mode))
+  (which-key-mode 1))
 
 ;; Winum
 (use-package winum
   :init
-  (winum-mode))
+  (winum-mode 1))
 
 (use-package magit
   :ensure t)
