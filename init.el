@@ -276,6 +276,14 @@
   :init
   (which-key-mode))
 
+;; Winum
+(use-package winum
+  :init
+  (winum-mode))
+
+(use-package magit
+  :ensure t)
+
 ;; Evil
 (use-package evil
   :init
@@ -283,10 +291,11 @@
   :config
   (evil-set-undo-system 'undo-redo))
 
-;; Winum
-(use-package winum
+(use-package evil-collection
+  :ensure t
+  :after evil
   :init
-  (winum-mode))
+  (evil-collection-init))
 
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
  (evil-define-key 'normal 'global
