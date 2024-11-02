@@ -68,8 +68,9 @@
 ;; TODO Is there any difference between (vertico-mode 1) and this?
 ;; Enable vertico
 (use-package vertico
-  :init
-  (vertico-mode)
+  :ensure t
+  :config
+  (vertico-mode 1) 
 
   ;; Different scroll margin
   ;; (setq vertico-scroll-margin 0)
@@ -86,12 +87,12 @@
 
 ;; Save minibuffer history
 (use-package savehist
-  :init
+  :config
   (savehist-mode 1))
 
 ;; Enrich existing commands with completion annotations
 (use-package marginalia
-  :init 
+  :config 
   (marginalia-mode 1))
 
 ;; Optionally use the `orderless' completion style: order of expressions doesn't matter for search.
