@@ -50,6 +50,8 @@
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(load-theme 'deeper-blue t)
+
 ;; use use-package
 (require 'use-package)
 (setq use-package-always-ensure t) ; download package if not there
