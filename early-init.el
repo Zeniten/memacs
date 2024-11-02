@@ -12,11 +12,11 @@
 (setq file-name-handler-alist-original file-name-handler-alist)
 (setq file-name-handler-alist nil)
 
-(blink-cursor-mode 0)        ; disable blinking cursor
-(menu-bar-mode 0)            ; disable menu bar
-(scroll-bar-mode 0)          ; disable scroll bar
-(tool-bar-mode 0)            ; disable tool bar (big buttons)
-(tooltip-mode 0)             ; disable tooltips
+(blink-cursor-mode -1)        ; disable blinking cursor
+(menu-bar-mode -1)            ; disable menu bar
+(scroll-bar-mode -1)          ; disable scroll bar
+(tool-bar-mode -1)            ; disable tool bar (big buttons)
+(tooltip-mode -1)             ; disable tooltips
 
 ;; (run-with-idle-timer
 ;;    5 nil
