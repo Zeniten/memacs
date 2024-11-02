@@ -1,0 +1,19 @@
+* What is eln-cache/?
+<2024-11-02 Sat>
+
+It's a diretory for storing native-compiled Emacs Lips files.
+
+#+begin_src emacs-lisp
+comp-native-version-dir
+#+end_src
+
+* What is auto-save-list?
+<2024-11-02 Sat>
+
+It stores information about auto-saved files, helping Emacs recover unsaved changes if it crashes or is terminated unexpectedly.
+
+* How do you set "minor-mode prefix"; "," in Spacemacs?
+<2024-11-02 Sat>
+
+* Should I do anything about the *~ files?
+<2024-11-02 Sat>
