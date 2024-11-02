@@ -65,31 +65,6 @@
         ("MELPA"        . 5)
         ("MELPA Stable" . 0)))
 
-
-;; Packages
-;;(use-package zenburn-theme)
-;;(load-theme 'zenburn t)
-;; (use-package nano-theme)
-
-;; (defun load-nano-theme (variant)
-;;  (let ((theme (intern (concat "nano-" (symbol-name variant)))))
-;;   (load-theme theme t)))
-
-;; (load-nano-theme 'dark)
-
-;; (use-package nano-modeline
-;;   :init
-;;   ;; disable the default modeline
-;;   (setq-default mode-line-format nil))
-
-;; (add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
-;; (add-hook 'text-mode-hook            #'nano-modeline-text-mode)
-;; (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
-;; (add-hook 'pdf-view-mode-hook        #'nano-modeline-pdf-mode)
-;; (add-hook 'term-mode-hook            #'nano-modeline-term-mode)
-;; (add-hook 'xwidget-webkit-mode-hook  #'nano-modeline-xwidget-mode)
-;; (add-hook 'messages-buffer-mode-hook #'nano-modeline-message-mode)
-
 ;; TODO Is there any difference between (vertico-mode 1) and this?
 ;; Enable vertico
 (use-package vertico
@@ -327,7 +302,7 @@
    (kbd "<SPC>wL") 'evil-window-move-far-right
    (kbd "<SPC>wd") 'delete-window
    (kbd "<SPC>1") 'winum-select-window-1
-   (kbd "<SPC>2")'winum-select-window-2
+   (kbd "<SPC>2") 'winum-select-window-2
    (kbd "<SPC>3") 'winum-select-window-3
    (kbd "<SPC>4") 'winum-select-window-4
    (kbd "<SPC>5") 'winum-select-window-5
@@ -336,10 +311,6 @@
    (kbd "<SPC>8") 'winum-select-window-8
    (kbd "<SPC>9") 'winum-select-window-9
    )
-
-;; (defvar mymacs-default-map (make-sparse-keymap)
-;;  "Base keymap for all my leader key commands.")
-
 
 ;; Lisp
 (use-package smartparens-mode
@@ -356,9 +327,6 @@
 (use-package clojure-ts-mode
   :hook ((clojure-ts-mode . eglot-ensure)
 	 (clojure-ts-mode . corfu-mode)))
-
-(use-package nix-mode
-  :mode "\\.nix\\'")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
