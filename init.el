@@ -280,9 +280,6 @@
   :init
   (winum-mode 1))
 
-(use-package magit
-  :defer t)
-
 ;; Evil
 (use-package evil
   :init
@@ -296,38 +293,43 @@
   :init
   (evil-collection-init))
 
+(use-package magit
+  :defer t)
+
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
- (evil-define-key 'normal 'global
-   (kbd "<SPC>fs") 'save-buffer
-   (kbd "<SPC>ff") 'find-file
-   (kbd "<SPC>fj") 'dired-jump
-   (kbd "<SPC>qq") 'kill-emacs
-   (kbd "<SPC>qr") 'restart-emacs
-   (kbd "<SPC>SPC") 'execute-extended-command ;meta
+(evil-define-key '(normal visual) 'global
+  (kbd "<SPC>fs") 'save-buffer
+  (kbd "<SPC>ff") 'find-file
+  (kbd "<SPC>fj") 'dired-jump
+  (kbd "<SPC>qq") 'kill-emacs
+  (kbd "<SPC>qr") 'restart-emacs
+  (kbd "<SPC>SPC") 'execute-extended-command ;meta
 
-   (kbd "<SPC>bp") 'previous-buffer
-   (kbd "<SPC>bn") 'next-buffer
-   (kbd "<SPC>bb") 'list-buffers
+  (kbd "<SPC>gs") 'magit-status
 
-   (kbd "<SPC>wv") 'split-window-right
-   (kbd "<SPC>wV") 'split-window-right-and-focus
-   (kbd "<SPC>ws") 'split-window-below
-   (kbd "<SPC>wS") 'split-window-below-and-focus
-   (kbd "<SPC>wK") 'evil-window-move-very-top
-   (kbd "<SPC>wH") 'evil-window-move-far-left
-   (kbd "<SPC>wJ") 'evil-window-move-very-bottom
-   (kbd "<SPC>wL") 'evil-window-move-far-right
-   (kbd "<SPC>wd") 'delete-window
-   (kbd "<SPC>1") 'winum-select-window-1
-   (kbd "<SPC>2") 'winum-select-window-2
-   (kbd "<SPC>3") 'winum-select-window-3
-   (kbd "<SPC>4") 'winum-select-window-4
-   (kbd "<SPC>5") 'winum-select-window-5
-   (kbd "<SPC>6") 'winum-select-window-6
-   (kbd "<SPC>7") 'winum-select-window-7
-   (kbd "<SPC>8") 'winum-select-window-8
-   (kbd "<SPC>9") 'winum-select-window-9
-   )
+  (kbd "<SPC>bp") 'previous-buffer
+  (kbd "<SPC>bn") 'next-buffer
+  (kbd "<SPC>bb") 'list-buffers
+
+  (kbd "<SPC>wv") 'split-window-right
+  (kbd "<SPC>wV") 'split-window-right-and-focus
+  (kbd "<SPC>ws") 'split-window-below
+  (kbd "<SPC>wS") 'split-window-below-and-focus
+  (kbd "<SPC>wK") 'evil-window-move-very-top
+  (kbd "<SPC>wH") 'evil-window-move-far-left
+  (kbd "<SPC>wJ") 'evil-window-move-very-bottom
+  (kbd "<SPC>wL") 'evil-window-move-far-right
+  (kbd "<SPC>wd") 'delete-window
+  (kbd "<SPC>1") 'winum-select-window-1
+  (kbd "<SPC>2") 'winum-select-window-2
+  (kbd "<SPC>3") 'winum-select-window-3
+  (kbd "<SPC>4") 'winum-select-window-4
+  (kbd "<SPC>5") 'winum-select-window-5
+  (kbd "<SPC>6") 'winum-select-window-6
+  (kbd "<SPC>7") 'winum-select-window-7
+  (kbd "<SPC>8") 'winum-select-window-8
+  (kbd "<SPC>9") 'winum-select-window-9
+  )
 
 ;; Lisp
 (use-package smartparens
