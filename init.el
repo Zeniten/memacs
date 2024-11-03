@@ -58,6 +58,12 @@
 ;; Revert Dired and other buffers
 (setq global-auto-revert-non-file-buffers t)
 
+;(defvar space-map (make-sparse-keymap)
+;  "Keymap for SPC commands.")
+
+;(define-key space-map (kbd "gs") 'magit-status)
+;(global-set-key (kbd "SPC") space-map)
+
 ;; use use-package
 (require 'use-package)
 (setq use-package-always-ensure t) ; download package if not there
