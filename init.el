@@ -280,7 +280,8 @@
   :init
   (winum-mode 1))
 
-(use-package magit)
+(use-package magit
+  :defer t)
 
 ;; Evil
 (use-package evil
