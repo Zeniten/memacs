@@ -315,7 +315,7 @@
 
   (kbd "<SPC>bp") 'previous-buffer
   (kbd "<SPC>bn") 'next-buffer
-  (kbd "<SPC>bb") 'list-buffers
+  (kbd "<SPC>bb") 'consult-buffer
 
   (kbd "<SPC>wv") 'split-window-right
   (kbd "<SPC>wV") 'split-window-right-and-focus
