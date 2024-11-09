@@ -276,6 +276,9 @@
   (kbd "<SPC>qr") 'restart-emacs
   (kbd "<SPC>SPC") 'execute-extended-command ;meta
 
+  (kbd "<SPC>pp") 'project-switch-project
+  (kbd "<SPC>pf") 'project-find-file
+
   (kbd "<SPC>ss") 'consult-line
 
   (kbd "<SPC>gs") 'magit-status
