@@ -5,8 +5,10 @@
   ;; load default config
   (require 'smartparens-config))
 
-;; TODO Is this the way to connect clj files to clojure-ts-mode?
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cljc\\'" . clojure-ts-mode))
+
 ;; Clojure
 ;; TODO Just testing so far; no idea if this is correct
 (use-package clojure-ts-mode
