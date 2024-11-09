@@ -44,7 +44,8 @@
 (setq-default fill-column 80)
 
 ;; Fonts
-(set-face-attribute 'default nil :font "Fira Code")
+(set-face-attribute 'default nil :font "Fira Code"
+		                 :height 113)
 
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
 (fset 'yes-or-no-p 'y-or-n-p)
