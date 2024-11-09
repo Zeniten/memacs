@@ -22,7 +22,11 @@
 (prefer-coding-system 'utf-8)
 
 ;; TODO Set only for certain modes
-(setq display-line-numbers 'relative)
+
+(add-hook 'after-init-hook
+             (lambda ()
+               (setq display-line-numbers-type 'relative)
+               (add-hook 'prog-mode-hook 'display-line-numbers-mode)))
 
 
 ;; PERF: Shave seconds off startup time by starting the scratch buffer in
