@@ -25,7 +25,6 @@
 (setq display-line-numbers 'relative)
 
 
-;; TODO Why sometimes 1, other times t, Lars Tveito?
 ;; PERF: Shave seconds off startup time by starting the scratch buffer in
 ;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
 ;;   pull in a ton of packages. `doom/open-scratch-buffer' provides a better
@@ -79,24 +78,9 @@
         ("MELPA"        . 5)
         ("MELPA Stable" . 0)))
 
-;; TODO Is there any difference between (vertico-mode 1) and this?
-;; Enable vertico
 (use-package vertico
   :config
-  (vertico-mode 1) 
-
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
-
-  ;; Show more candidates
-  ;; (setq vertico-count 20)
-
-  ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
-
-  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  ;; (setq vertico-cycle t)
-  )
+  (vertico-mode 1))
 
 ;; Save minibuffer history
 (use-package savehist
@@ -119,26 +103,6 @@
         completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package corfu
-  ;; Optional customizations
-  ;; :custom
-  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  ;; (corfu-auto t)                 ;; Enable auto completion
-  ;; (corfu-separator ?\s)          ;; Orderless field separator
-  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
-  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
-
-  ;; Enable Corfu only for certain modes.
-  ;; :hook ((prog-mode . corfu-mode)
-  ;;        (shell-mode . corfu-mode)
-  ;;        (eshell-mode . corfu-mode))
-
-  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
-  ;; be used globally (M-/).  See also the customization variable
-  ;; `global-corfu-modes' to exclude certain modes.
   :init
   (global-corfu-mode))
 
