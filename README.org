@@ -1,0 +1,4 @@
+* Inspirations
+- https://github.com/larstvei/dot-emacs/blob/main/init.org
+- https://github.com/magnars/emacsd-reboot
+- https://erick.navarro.io/blog/switching-from-helm-to-vertico-and-friends/
