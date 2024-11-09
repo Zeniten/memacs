@@ -273,6 +273,7 @@
   (evil-collection-init))
 
 (require 'setup-magit)
+(require 'setup-clojure)
 
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
 (evil-define-key '(normal visual) 'global
@@ -313,18 +314,3 @@
   (kbd "<SPC>8") 'winum-select-window-8
   (kbd "<SPC>9") 'winum-select-window-9
   )
-
-;; Lisp
-(use-package smartparens
-  :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
-  :config
-  ;; load default config
-  (require 'smartparens-config))
-
-;; TODO Is this the way to connect clj files to clojure-ts-mode?
-(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-ts-mode))
-;; Clojure
-;; TODO Just testing so far; no idea if this is correct
-(use-package clojure-ts-mode
-  :hook ((clojure-ts-mode . eglot-ensure)
-	 (clojure-ts-mode . corfu-mode)))
