@@ -1,6 +1,7 @@
 ;; memacs
 ;; alias for: "emacs --init-dir ~/.config/emacs/"
 
+(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
 ;; Keep tabs on startup time
 
@@ -271,8 +272,7 @@
   :init
   (evil-collection-init))
 
-(use-package magit
-  :defer t)
+(require 'setup-magit)
 
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
 (evil-define-key '(normal visual) 'global
