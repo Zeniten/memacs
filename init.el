@@ -276,6 +276,8 @@
   (kbd "<SPC>qr") 'restart-emacs
   (kbd "<SPC>SPC") 'execute-extended-command ;meta
 
+  (kbd "<SPC>ss") 'consult-line
+
   (kbd "<SPC>gs") 'magit-status
 
   (kbd "<SPC>bp") 'previous-buffer
