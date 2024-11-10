@@ -112,6 +112,8 @@
         completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package corfu
+  :custom
+  (corfu-auto t)
   :init
   (global-corfu-mode))
 

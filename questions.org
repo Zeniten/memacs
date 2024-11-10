@@ -1,3 +1,11 @@
+* Why is autocompletion not working?
+:PROPERTIES:
+:ASKED:    <2024-11-10 Sun>
+:ANSWERED: <2024-11-10 Sun>
+:END:
+
+It is; it was just not set to auto!
+
 * What is eln-cache/?
 <2024-11-02 Sat>
 
