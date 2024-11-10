@@ -12,6 +12,9 @@
 
 (use-package which-key
   :init
+  (setq which-key-idle-delay 0.4
+	which-key-idle-secondary-delay 0.05)
+  :config
   (which-key-mode 1))
 
 (use-package winum
