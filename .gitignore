@@ -1,10 +1,13 @@
-auto-save-list/
-eln-cache/
-elpa/
-history
-transient/
-
 # temporary and backup files
 *~
 .#*
 \#*\#
+
+auto-save-list/
+eln-cache/
+elpa/
+history
+projects
+recentf
+transient/
+tree-sitter/
