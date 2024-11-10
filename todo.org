@@ -1,4 +1,9 @@
 * [ ] Add "SPC TAB"
+* Add SPC keybindings for help pages
+
+C-h f -> SPC h f
+etc.
+
 * Add Nerd Fonts
 <2024-11-10 Sun>
 
