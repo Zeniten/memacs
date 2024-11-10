@@ -1,1 +1,5 @@
 * [ ] Add "SPC TAB"
+* Add Nerd Fonts
+<2024-11-10 Sun>
+
+https://github.com/rainstormstudio/nerd-icons.el
