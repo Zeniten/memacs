@@ -275,6 +275,26 @@
 (require 'setup-magit)
 (require 'setup-clojure)
 
+(which-key-add-key-based-replacements
+  "<SPC> f" "file"
+  "<SPC> p" "project"
+  "<SPC> s" "search"
+  "<SPC> g" "git"
+  "<SPC> b" "buffer"
+  "<SPC> w" "window"
+  "<SPC> 1" "window 1"
+  "<SPC> 2" "window 2"
+  "<SPC> 3" "window 3"
+  "<SPC> 4" "window 4"
+  "<SPC> 5" "window 5"
+  "<SPC> 6" "window 6"
+  "<SPC> 7" "window 7"
+  "<SPC> 8" "window 8"
+  "<SPC> 9" "window 9"
+  "<SPC> q" "quit/restart"
+  "<SPC> SPC" "M-x"
+)
+
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
 (evil-define-key '(normal visual) 'global
   (kbd "<SPC>fs") 'save-buffer
