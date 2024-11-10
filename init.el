@@ -114,8 +114,8 @@
 (use-package corfu
   :custom
   (corfu-auto t)
-  :init
-  (global-corfu-mode))
+  :config
+  (global-corfu-mode 1))
 
 ;; A few more useful configurations...
 (use-package emacs
