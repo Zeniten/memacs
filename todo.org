@@ -1,3 +1,7 @@
+* Look into Combobulate
+
+https://github.com/mickeynp/combobulate
+
 * [ ] Add "SPC TAB"
 * Add SPC keybindings for help pages
 
