@@ -15,4 +15,6 @@
   :hook ((clojure-ts-mode . eglot-ensure)
 	 (clojure-ts-mode . corfu-mode)))
 
+(use-package cider)
+
 (provide 'setup-clojure)
