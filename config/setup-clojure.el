@@ -8,11 +8,10 @@
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)
 	 ("\\.cljs\\'" . clojurescript-mode)
-	 ("\\.cljc\\'" . clojurec-mode)))
-
-;(use-package eglot
-;  :defer t
-;  :hook (clojure-mode clojurescript-mode clojurec-mode))
+	 ("\\.cljc\\'" . clojurec-mode))
+  :hook ((clojure-mode . eglot-ensure)
+	 (clojurescript-mode . eglot-ensure)
+	 (clojurec-mode . eglot-ensure)))
 
 (use-package cider
   :defer t)
