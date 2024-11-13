@@ -1,5 +1,6 @@
 ;; Lisp
 (use-package smartparens
+  :defer t
   :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
   :config
   ;; load default config
@@ -12,9 +13,18 @@
 ;; Clojure
 ;; TODO Just testing so far; no idea if this is correct
 (use-package clojure-ts-mode
+  :defer t
   :hook ((clojure-ts-mode . eglot-ensure)
 	 (clojure-ts-mode . corfu-mode)))
 
-(use-package cider)
+(use-package eglot
+  :defer t
+  :hook (clojure-mode clojurescript-mode clojurec-mode)
+  :config
+  (add-to-list 'eglot-server-programs
+	       '(clojure-ts-mode . ("clojure-lsp"))))
+
+(use-package cider
+  :defer t)
 
 (provide 'setup-clojure)
