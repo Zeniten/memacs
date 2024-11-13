@@ -1,4 +1,3 @@
-;; Lisp
 (use-package smartparens
   :defer t
   :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
@@ -6,8 +5,6 @@
   ;; load default config
   (require 'smartparens-config))
 
-;; Clojure
-;; TODO Just testing so far; no idea if this is correct
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)
 	 ("\\.cljs\\'" . clojurescript-mode)
