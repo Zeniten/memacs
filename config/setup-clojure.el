@@ -13,6 +13,10 @@
 	 (clojurescript-mode . eglot-ensure)
 	 (clojurec-mode . eglot-ensure)))
 
+(use-package eldoc
+  :custom
+  (eldoc-display-functions '(eldoc-display-in-buffer)))
+
 (use-package cider
   :defer t)
 
