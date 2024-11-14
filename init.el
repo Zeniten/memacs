@@ -1,6 +1,7 @@
 ;; memacs
 ;; alias for: "emacs --init-dir ~/.config/emacs/"
 
+(add-to-list 'load-path (expand-file-name "core" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
 ;; Keep tabs on startup time
@@ -252,7 +253,7 @@
   ;; (setq consult-project-function nil)
 )
 
-(require 'setup-evil)
+(require 'core-memacs)
 (require 'setup-magit)
 (require 'setup-clojure)
 

@@ -81,4 +81,4 @@
   (kbd "<SPC>9") 'winum-select-window-9
   )
 
-(provide 'setup-evil)
+(provide 'core-memacs)
