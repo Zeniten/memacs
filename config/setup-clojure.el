@@ -28,6 +28,8 @@
    :states '(normal visual)
    "ef" 'cider-eval-defun-at-point
    "es" 'cider-eval-sexp-at-point)
+  (which-key-add-key-based-replacements
+    ", e" "evaluation")
   :hook ((clojure-mode . eglot-ensure)
 	 (clojurescript-mode . eglot-ensure)
 	 (clojurec-mode . eglot-ensure)))
