@@ -1,8 +1,12 @@
 (use-package emacs
   :custom
+  ;; scrolling
   (scroll-conservatively 1000) ;; ensure cursor keeps its placement when jumping to end of buffer
   (scroll-margin 3)
-  (scroll-step 1))
+  (scroll-step 1)
+
+  ;; helping
+  (help-window-select t))
 
 (use-package evil
   :init
