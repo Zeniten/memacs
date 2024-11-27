@@ -1,3 +1,8 @@
+(use-package emacs
+  :custom
+  (scroll-margin 4)
+  (scroll-step 1))
+
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
