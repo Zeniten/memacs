@@ -1,5 +1,6 @@
 (use-package emacs
   :custom
+  (scroll-conservatively 1000) ;; ensure cursor keeps its placement when jumping to end of buffer
   (scroll-margin 4)
   (scroll-step 1))
 
