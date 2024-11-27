@@ -29,6 +29,7 @@
 
 (which-key-add-key-based-replacements
   "<SPC> f" "file"
+  "<SPC> h" "help"
   "<SPC> p" "project"
   "<SPC> s" "search"
   "<SPC> g" "git"
@@ -62,6 +63,10 @@
   (kbd "<SPC>ss") 'consult-line
 
   (kbd "<SPC>gs") 'magit-status
+
+  (kbd "<SPC>hf") 'describe-function
+  (kbd "<SPC>hk") 'describe-key
+  (kbd "<SPC>hv") 'describe-variable
 
   (kbd "<SPC>bp") 'previous-buffer
   (kbd "<SPC>bn") 'next-buffer
