@@ -159,4 +159,5 @@
 
 (require 'setup-org)
 (require 'setup-magit)
+(require 'setup-elisp)
 (require 'setup-clojure)
