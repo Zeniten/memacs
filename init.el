@@ -93,13 +93,28 @@
 
 (use-package catppuccin-theme
   :custom
-  (catppuccin-flavor 'frappe)
+  (catppuccin-flavor 'latte)
   :config
   (load-theme 'catppuccin :no-confirm)
+
+  (defvar my-catppuccin-themes '(latte frappe))
+
+  (defun cycle-themes ()
+    "Cycle through Catppuccin theme flavors defined in `my-catppuccin-themes`."
+    (interactive)
+    (let ((rotated (nconc (cdr my-catppuccin-themes) (list (car my-catppuccin-themes)))))
+      (setq catppuccin-flavor (car (setq my-catppuccin-themes rotated)))
+      (load-theme 'catppuccin :no-confirm)
+      (message "Switched to Catppuccin theme: %s" (symbol-name catppuccin-flavor))))
+
+  ;; Load fallback theme if Catppuccin fails
   (add-hook 'after-init-hook
-	    (lambda ()
-	      (unless (featurep 'catppuccin-theme)
-		(load-theme 'deeper-blue t)))))
+            (lambda ()
+              (unless (featurep 'catppuccin-theme)
+                (load-theme 'deeper-blue t))))
+
+  ;; TODO What if Catppuccin fails?
+  (global-set-key (kbd "C-c t") 'cycle-themes))
 
 (use-package vertico
   :config
