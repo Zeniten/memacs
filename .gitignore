@@ -8,6 +8,7 @@ backups/
 eln-cache/
 elpa/
 history
+org-roam.db
 projects
 recentf
 tramp

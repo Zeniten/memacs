@@ -277,6 +277,6 @@
 )
 
 (require 'core-memacs)
+(require 'setup-org)
 (require 'setup-magit)
 (require 'setup-clojure)
-
