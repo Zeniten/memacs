@@ -56,8 +56,6 @@
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(load-theme 'deeper-blue t)
-
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
 
@@ -92,6 +90,16 @@
       '(("GNU ELPA"     . 10)
         ("MELPA"        . 5)
         ("MELPA Stable" . 0)))
+
+(use-package catppuccin-theme
+  :custom
+  (catppuccin-flavor 'frappe)
+  :config
+  (load-theme 'catppuccin :no-confirm)
+  (add-hook 'after-init-hook
+	    (lambda ()
+	      (unless (featurep 'catppuccin-theme)
+		(load-theme 'deeper-blue t)))))
 
 (use-package vertico
   :config
