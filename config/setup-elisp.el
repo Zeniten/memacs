@@ -2,8 +2,9 @@
   :config
   (my-leader-def
     :keymaps 'emacs-lisp-mode-map
+    "eb" 'eval-buffer
     "ef" 'eros-eval-defun
-    "eb" 'eros-eval-buffer)
+    "es" 'eros-eval-last-sexp)
   (which-key-add-key-based-replacements
     ", e" "evaluation")
   (eros-mode 1))

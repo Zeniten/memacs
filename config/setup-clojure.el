@@ -15,7 +15,9 @@
   :config
   (my-leader-def
     :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+    "eb" 'cider-load-buffer
     "ef" 'cider-eval-defun-at-point
+    "el" 'cider-eval-list-at-point
     "es" 'cider-eval-sexp-at-point)
   (which-key-add-key-based-replacements
     ", e" "evaluation"))
