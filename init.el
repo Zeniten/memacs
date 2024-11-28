@@ -155,6 +155,8 @@
 (use-package consult)
 
 (require 'core-memacs)
+(require 'setup-general)
+
 (require 'setup-org)
 (require 'setup-magit)
 (require 'setup-clojure)
