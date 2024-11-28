@@ -1,11 +1,11 @@
-(use-package elisp-mode
-  :ensure nil
+(use-package eros
   :config
   (my-leader-def
     :keymaps 'emacs-lisp-mode-map
-    "ef" 'eval-defun
-    "eb" 'eval-buffer)
+    "ef" 'eros-eval-defun
+    "eb" 'eros-eval-buffer)
   (which-key-add-key-based-replacements
-    ", e" "evaluation"))
+    ", e" "evaluation")
+  (eros-mode 1))
 
 (provide 'setup-elisp)
