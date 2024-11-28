@@ -18,14 +18,6 @@
          ;; Dailies
          ("C-c n j" . org-roam-dailies-capture-today))
   :config
-  ;; (setq display-buffer-alist
-  ;;       (append display-buffer-alist
-  ;;               '(("\\*org-roam\\*"
-  ;;                  (display-buffer-in-direction)
-  ;;                  (direction . right)
-  ;;                  (window-width . 0.5)
-  ;;                  (inhibit-same-window . nil)))))
-
   ;; Advice to ensure we always switch focus to the org-roam buffer
   (defun my-org-roam-focus-buffer (&rest _)
     "Ensure focus moves to the `*org-roam*` buffer when toggled."
