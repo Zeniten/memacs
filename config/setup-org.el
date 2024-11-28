@@ -4,6 +4,7 @@
 		(setq-local fill-column 80) ; Set fill-column locally for Org-mode
 		(auto-fill-mode 1)))
   :custom
+  (org-startup-folded t)
   (org-startup-indented t))
 
 (use-package org-roam
