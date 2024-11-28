@@ -1,3 +1,7 @@
+(use-package org
+  :custom
+  (org-startup-indented t))
+
 (use-package org-roam
   :custom
   (org-roam-directory (file-truename "~/Dropbox/org/"))
