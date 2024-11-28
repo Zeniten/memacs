@@ -39,7 +39,6 @@
       inhibit-startup-screen t  ; skip startup screen
       initial-major-mode 'fundamental-mode
       initial-scratch-message nil ; clean scratch buffer
-      recentf-max-saved-items 1000 ; show more recent files
       ring-bell-function 'ignore ; quiet
       sentence-end-double-space nil
       )
@@ -162,6 +161,8 @@
   (setq tab-always-indent 'complete))
 
 (use-package recentf
+  :custom
+  (recentf-max-saved-items 50) ; show more recent files
   :config
   (recentf-mode 1))
 
