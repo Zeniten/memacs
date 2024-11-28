@@ -161,6 +161,10 @@
   ;; `completion-at-point' is often bound to M-TAB.
   (setq tab-always-indent 'complete))
 
+(use-package recentf
+  :config
+  (recentf-mode 1))
+
 ;; Example configuration for Consult
 (use-package consult)
 
