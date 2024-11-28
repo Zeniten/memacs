@@ -63,6 +63,7 @@
 
   (kbd "<SPC>pp") 'project-switch-project
   (kbd "<SPC>pf") 'project-find-file
+  (kbd "<SPC>/") 'consult-ripgrep
 
   (kbd "<SPC>ss") 'consult-line
 
