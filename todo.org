@@ -1,3 +1,13 @@
+* List keybindings for window switching under one heading in which-key
+:PROPERTIES:
+:REGISTERED: <2024-11-29 Fri>
+:END:
+
+<2024-11-29 Fri>
+
+Like what Spacemacs does: 1..9: select window 1..9, instead of 1: window 1, 2:
+window 2, etc.
+
 * Set up TypeScript/JavaScript packages
 
 https://www.ovistoica.com/blog/2024-7-05-modern-emacs-typescript-web-tsx-config
