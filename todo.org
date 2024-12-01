@@ -2,10 +2,6 @@
 
 <2024-12-01 Sun>
 
-* Configure Memacs such that light/dark mode follows system's
-
-<2024-12-01 Sun>
-
 * List keybindings for window switching under one heading in which-key
 :PROPERTIES:
 :REGISTERED: <2024-11-29 Fri>
@@ -29,6 +25,10 @@ https://github.com/mickeynp/combobulate
 <2024-11-10 Sun>
 
 https://github.com/rainstormstudio/nerd-icons.el
+* DONE Configure Memacs such that light/dark mode follows system's
+
+<2024-12-01 Sun>
+
 * DONE Add SPC keybindings for help pages
 
 C-h f -> SPC h f

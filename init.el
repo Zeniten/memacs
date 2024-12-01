@@ -91,8 +91,8 @@
         ("MELPA Stable" . 0)))
 
 (use-package catppuccin-theme
-  :custom
-  (catppuccin-flavor 'latte)
+  ;:custom
+  ;(catppuccin-flavor 'latte)
   :config
   (load-theme 'catppuccin :no-confirm)
 
@@ -114,6 +114,25 @@
 
   ;; TODO What if Catppuccin fails?
   (global-set-key (kbd "C-c t") 'cycle-themes))
+
+;; idea: https://www.rahuljuliato.com/posts/auto-dark-catppuccin
+(use-package auto-dark
+  :after catppuccin
+  :config
+  (ignore-errors
+    (setq auto-dark-themes '((catppuccin) (catppuccin)))
+
+    (add-hook 'auto-dark-dark-mode-hook
+              (lambda ()
+                (setq catppuccin-flavor 'frappe)
+                (catppuccin-reload)))
+
+    (add-hook 'auto-dark-light-mode-hook
+              (lambda ()
+                (setq catppuccin-flavor 'latte)
+                (catppuccin-reload)))
+
+    (auto-dark-mode 1)))
 
 (use-package vertico
   :config
