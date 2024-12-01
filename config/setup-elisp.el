@@ -1,3 +1,4 @@
+;; Idea: go to end of list, call `eros-eval-last-sexp'
 (defun my-eval-list-at-point ()
   "Evaluate the top-level list at point, similar to `cider-eval-list-at-point` in Clojure.
 Displays the result in the minibuffer."

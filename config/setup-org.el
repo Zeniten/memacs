@@ -35,4 +35,6 @@
 ;; anki-editor
 ;; https://github.com/anki-editor/anki-editor
 
+;;;; https://github.com/orgtre/ankiorg
+
 (provide 'setup-org)
