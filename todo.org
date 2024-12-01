@@ -2,9 +2,6 @@
 
 <2024-12-01 Sun>
 
-* Set up TAB for formatting
-<2024-12-01 Sun>
-
 * Configure Memacs such that light/dark mode follows system's
 
 <2024-12-01 Sun>
@@ -37,3 +34,7 @@ etc.
 <2024-11-10 Sun>
 
 https://github.com/rainstormstudio/nerd-icons.el
+* DONE Set up TAB for formatting
+
+<2024-12-01 Sun>
+

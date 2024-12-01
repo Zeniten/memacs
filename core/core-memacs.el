@@ -98,4 +98,9 @@
   (kbd "<SPC>9") 'winum-select-window-9
   )
 
+(evil-define-key '(normal visual) prog-mode-map
+  (kbd "TAB") 'indent-for-tab-command
+  )
+
+
 (provide 'core-memacs)
