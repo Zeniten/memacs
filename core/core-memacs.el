@@ -71,6 +71,7 @@
 
   (kbd "<SPC>hf") 'describe-function
   (kbd "<SPC>hk") 'describe-key
+  (kbd "<SPC>hm") 'describe-mode
   (kbd "<SPC>hv") 'describe-variable
 
   (kbd "<SPC>bp") 'previous-buffer
