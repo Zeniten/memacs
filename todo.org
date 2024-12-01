@@ -1,3 +1,14 @@
+* Set up gptel
+
+<2024-12-01 Sun>
+
+* Set up TAB for formatting
+<2024-12-01 Sun>
+
+* Configure Memacs such that light/dark mode follows system's
+
+<2024-12-01 Sun>
+
 * List keybindings for window switching under one heading in which-key
 :PROPERTIES:
 :REGISTERED: <2024-11-29 Fri>
