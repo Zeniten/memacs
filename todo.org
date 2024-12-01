@@ -24,16 +24,16 @@ https://www.ovistoica.com/blog/2024-7-05-modern-emacs-typescript-web-tsx-config
 
 https://github.com/mickeynp/combobulate
 
-* [ ] Add "SPC TAB"
-* Add SPC keybindings for help pages
-
-C-h f -> SPC h f
-etc.
-
+* Add "SPC TAB"
 * Add Nerd Fonts
 <2024-11-10 Sun>
 
 https://github.com/rainstormstudio/nerd-icons.el
+* DONE Add SPC keybindings for help pages
+
+C-h f -> SPC h f
+etc.
+
 * DONE Set up TAB for formatting
 
 <2024-12-01 Sun>
