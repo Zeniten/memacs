@@ -176,3 +176,4 @@
 (require 'setup-magit)
 (require 'setup-elisp)
 (require 'setup-clojure)
+(require 'setup-markdown)
