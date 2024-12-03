@@ -176,4 +176,5 @@
 (require 'setup-magit)
 (require 'setup-elisp)
 (require 'setup-clojure)
+(require 'setup-typescript)
 (require 'setup-markdown)
