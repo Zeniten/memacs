@@ -1,6 +1,7 @@
 # temporary and backup files
 *~
 .#*
+.last-package-update-day
 \#*\#
 
 auto-save-list/
