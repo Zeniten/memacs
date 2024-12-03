@@ -91,9 +91,12 @@
         ("MELPA Stable" . 0)))
 
 (use-package auto-package-update
+  :custom
+  (auto-package-update-delete-old-versions t)
+  (auto-package-update-hide-results t)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-show-preview t)
   :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
 (use-package catppuccin-theme
