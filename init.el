@@ -100,8 +100,8 @@
   (auto-package-update-maybe))
 
 (use-package catppuccin-theme
-  ;:custom
-  ;(catppuccin-flavor 'latte)
+  :custom
+  (catppuccin-flavor 'latte)
   :config
   (load-theme 'catppuccin :no-confirm)
 
@@ -125,19 +125,19 @@
   (global-set-key (kbd "C-c t") 'cycle-themes))
 
 ;; idea: https://www.rahuljuliato.com/posts/auto-dark-catppuccin
-(use-package auto-dark
-  :custom
-  (auto-dark-themes '((catppuccin) (catppuccin)))
-  :hook
-  (auto-dark-dark-mode
-   . (lambda ()
-       (setq catppuccin-flavor 'frappe)
-       (catppuccin-reload)))
-  (auto-dark-light-mode
-   . (lambda ()
-       (setq catppuccin-flavor 'latte)
-       (catppuccin-reload)))
-  :config (auto-dark-mode 1))
+;; (use-package auto-dark
+;;   :custom
+;;   (auto-dark-themes '((catppuccin) (catppuccin)))
+;;   :hook
+;;   (auto-dark-dark-mode
+;;    . (lambda ()
+;;        (setq catppuccin-flavor 'frappe)
+;;        (catppuccin-reload)))
+;;   (auto-dark-light-mode
+;;    . (lambda ()
+;;        (setq catppuccin-flavor 'latte)
+;;        (catppuccin-reload)))
+;;   :config (auto-dark-mode 1))
 
 (use-package vertico
   :config
