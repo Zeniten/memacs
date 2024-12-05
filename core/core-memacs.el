@@ -135,6 +135,6 @@
   )
 
 (use-package esup
-  :defer)
+  :defer t)
 
 (provide 'core-memacs)
