@@ -159,6 +159,7 @@
 (require 'setup-org)
 (require 'setup-magit)
 (require 'setup-elisp)
+(require 'setup-llm-client)
 (require 'setup-clojure)
 (require 'setup-typescript)
 (require 'setup-markdown)
