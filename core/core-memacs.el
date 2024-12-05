@@ -134,5 +134,7 @@
   (kbd "TAB") #'indent-for-tab-command
   )
 
+(use-package esup
+  :defer)
 
 (provide 'core-memacs)
