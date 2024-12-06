@@ -15,6 +15,8 @@
   (evil-set-undo-system 'undo-redo)
   (evil-mode 1))
 
+;; https://github.com/jamescherti/enhanced-evil-paredit.el
+
 (use-package evil-collection
   :after evil
   :init
