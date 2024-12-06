@@ -1,6 +1,6 @@
 (use-package gptel
   :custom
-  (gptel-model "gpt-4o")
+  (gptel-model 'gpt-4o)
   :config
   (which-key-add-key-based-replacements
     (kbd "<SPC> l") "llm")
