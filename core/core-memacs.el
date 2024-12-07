@@ -22,6 +22,12 @@
   :init
   (evil-collection-init))
 
+(use-package evil-nerd-commenter
+  :after evil
+  :config
+  (evil-define-key '(normal visual) 'global
+    "gc" #'evilnc-comment-operator))
+
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
