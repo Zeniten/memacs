@@ -120,6 +120,7 @@
   (kbd "<SPC>gs") #'magit-status
 
   (kbd "<SPC>hf") #'describe-function
+  (kbd "<SPC>hi") #'info
   (kbd "<SPC>hk") #'describe-key
   (kbd "<SPC>hm") #'describe-mode
   (kbd "<SPC>hv") #'describe-variable
