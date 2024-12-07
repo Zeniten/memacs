@@ -1,6 +1,6 @@
 (use-package smartparens
   :defer t
-  :hook (prog-mode text-mode) ;; add `smartparens-mode` to these hooks
+  :hook (prog-mode) ;; add `smartparens-mode` to these hooks
   :config
   ;; load default config
   (require 'smartparens-config))
