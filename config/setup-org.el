@@ -5,7 +5,19 @@
 		(auto-fill-mode 1)))
   :custom
   (org-startup-folded t)
-  (org-startup-indented t))
+  (org-startup-indented t)
+  :config
+  (my-leader-def
+    :keymaps '(org-mode-map)
+    "ib" #'org-insert-structure-template
+    "bd" #'org-babel-demarcate-block)
+  (which-key-add-key-based-replacements
+    ", i" "insert"
+    ", b" "babel")
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((clojure . t))))
 
 (use-package org-roam
   :custom
