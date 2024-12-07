@@ -1,3 +1,14 @@
+* Consider disabling Evil in modes like Info, Calendar, etc.
+<2024-12-07 Sat>
+
+#+begin_quote
+u probably don't need Evil in Info, Dired, Calendar, and similar modes that
+already use single keys for actions. Have you tried to use 'emacs mode in Info
+mode, something like this:
+
+(add-hook 'Info-mode (lambda () (setq evil-default-state 'emacs)))
+#+end_quote
+
 * List keybindings for window switching under one heading in which-key
 :PROPERTIES:
 :REGISTERED: <2024-11-29 Fri>
