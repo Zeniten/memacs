@@ -20,10 +20,16 @@ Displays the result in the minibuffer."
             ;; Display the result in the minibuffer
             (message "Result: %s" result)))))))
 
+(defun memacs-align-lisp-comments ()
+  "Align comments marked with ';'."
+  (interactive)
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\);"))
+
 (use-package eros
   :config
   (my-leader-def
     :keymaps 'emacs-lisp-mode-map
+    "a" #'memacs-align-lisp-comments
     "eb" 'eval-buffer
     "ef" 'eros-eval-defun
     "el" 'my-eval-list-at-point

@@ -30,16 +30,15 @@
                (setq display-line-numbers-type 'relative)
                (add-hook 'prog-mode-hook 'display-line-numbers-mode)))
 
-
 ;; PERF: Shave seconds off startup time by starting the scratch buffer in
 ;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
 ;;   pull in a ton of packages. `doom/open-scratch-buffer' provides a better
 ;;   scratch buffer anyway.
-(setq frame-inhibit-implied-resize 1 ; don't resize frame implicitly
-      inhibit-startup-screen t  ; skip startup screen
-      initial-major-mode 'fundamental-mode
-      initial-scratch-message nil ; clean scratch buffer
-      ring-bell-function 'ignore ; quiet
+(setq frame-inhibit-implied-resize 1		; don't resize frame implicitly
+      inhibit-startup-screen t			; skip startup screen
+      initial-major-mode 'fundamental-mode	; test
+      initial-scratch-message nil		; clean scratch buffer
+      ring-bell-function 'ignore		; quiet
       sentence-end-double-space nil
       )
 
