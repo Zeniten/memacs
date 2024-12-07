@@ -120,6 +120,8 @@
 
 (use-package vertico
   :config
+  (define-key vertico-map (kbd "C-j") #'vertico-next)
+  (define-key vertico-map (kbd "C-k") #'vertico-previous)
   (vertico-mode 1))
 
 ;; Save minibuffer history
