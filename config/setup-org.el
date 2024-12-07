@@ -1,4 +1,5 @@
 (use-package org
+  :defer t
   :hook
   (org-mode . (lambda ()
 		(setq-local fill-column 80) ; Set fill-column locally for Org-mode
@@ -20,6 +21,7 @@
    '((clojure . t))))
 
 (use-package org-roam
+  :defer t
   :custom
   (org-roam-directory (file-truename "~/Dropbox/org/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
