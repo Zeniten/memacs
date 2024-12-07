@@ -85,12 +85,14 @@
 ;; TODO Hvorfor har du ikke med nongnu elpa?
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
+	("NonGNU ELPA"  . "https://elpa.gnu.org/nongnu/")
         ("MELPA Stable" . "https://stable.melpa.org/packages/")
         ("MELPA"        . "https://melpa.org/packages/"))
       package-archive-priorities
-      '(("GNU ELPA"     . 10)
-        ("MELPA"        . 5)
-        ("MELPA Stable" . 0)))
+      '(("GNU ELPA"     . 4)
+	("NonGNU ELPA"  . 3)
+        ("MELPA"        . 2)
+        ("MELPA Stable" . 1)))
 
 (use-package auto-package-update
   :custom
