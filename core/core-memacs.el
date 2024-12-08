@@ -20,7 +20,17 @@
 (use-package evil-collection
   :after evil
   :init
-  (evil-collection-init))
+  (evil-collection-init)
+
+  ;; Rebind SPC in Dired mode
+  (evil-define-key 'normal dired-mode-map
+    (kbd "<SPC>") nil)
+  (define-key dired-mode-map (kbd "<SPC>") (lookup-key (current-global-map) (kbd "<SPC>")))
+
+  ;; Why can't you simply do this instead?
+  ;; (evil-define-key 'normal dired-mode-map
+  ;;   (kbd "<SPC>") (lookup-key (current-global-map) (kbd "<SPC>")))
+  )
 
 (use-package evil-nerd-commenter
   :after evil
