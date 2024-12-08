@@ -21,13 +21,12 @@
   :after evil
   :init
   (evil-collection-init)
-
+  :config
   ;; Rebind SPC in Dired mode
-  (evil-define-key 'normal dired-mode-map
-    (kbd "<SPC>") nil)
-  (define-key dired-mode-map (kbd "<SPC>") (lookup-key (current-global-map) (kbd "<SPC>")))
-
-  ;; Why can't you simply do this instead?
+  (with-eval-after-load 'dired
+    (evil-define-key 'normal dired-mode-map
+      (kbd "<SPC>") nil)
+    (define-key dired-mode-map (kbd "<SPC>") (lookup-key (current-global-map) (kbd "<SPC>"))))
   ;; (evil-define-key 'normal dired-mode-map
   ;;   (kbd "<SPC>") (lookup-key (current-global-map) (kbd "<SPC>")))
   )
