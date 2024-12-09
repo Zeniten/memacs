@@ -1,3 +1,10 @@
+* Set up jet.el
+:PROPERTIES:
+:ADDED:    <2024-12-09 Mon>
+:END:
+
+https://github.com/ericdallo/jet.el
+
 * Consider disabling Evil in modes like Info, Calendar, etc.
 <2024-12-07 Sat>
 
