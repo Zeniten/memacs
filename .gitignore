@@ -3,6 +3,7 @@
 .#*
 .last-package-update-day
 \#*\#
+session.*
 
 auto-save-list/
 backups/
