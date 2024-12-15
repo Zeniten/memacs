@@ -114,6 +114,7 @@
 ;; https://github.com/noctuid/evil-guide#keybindings-and-states
 (evil-define-key '(normal visual) 'global
   (kbd "<SPC>fs") #'save-buffer
+  (kbd "<SPC>fS") #'evil-write-all
   (kbd "<SPC>ff") #'find-file
   (kbd "<SPC>fj") #'dired-jump
   (kbd "<SPC>qq") #'kill-emacs
