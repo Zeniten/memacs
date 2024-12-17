@@ -32,6 +32,8 @@
   (eldoc-display-functions '(eldoc-display-in-buffer)))
 
 (use-package cider
-  :defer t)
+  :defer t
+  :custom
+  (cider-repl-pop-to-buffer-on-connect nil))
 
 (provide 'setup-clojure)
