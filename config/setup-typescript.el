@@ -66,4 +66,9 @@
 (use-package typescript-ts-mode
   :hook ((typescript-ts-mode . eglot-ensure)))
 
+(use-package css-mode
+  :ensure nil
+  :custom
+  (css-indent-offset 2))
+
 (provide 'setup-typescript)
