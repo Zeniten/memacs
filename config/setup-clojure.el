@@ -15,7 +15,7 @@
     (kbd "<SPC>k{") #'sp-wrap-curly
     (kbd "<SPC>k}") #'sp-wrap-curly
     (kbd "<SPC>kr") #'sp-raise-sexp
-    (kbs "<SPC>kt") #'sp-transpose-sexp
+    (kbd "<SPC>kt") #'sp-transpose-sexp
     (kbd "<SPC>ks") #'sp-forward-slurp-sexp
     (kbd "<SPC>kS") #'sp-backward-slurp-sexp
     (kbd "<SPC>kb") #'sp-forward-barf-sexp
