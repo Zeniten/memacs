@@ -3,7 +3,23 @@
   :hook (prog-mode)
   :config
   ;; load default config
-  (require 'smartparens-config))
+  (require 'smartparens-config)
+  (which-key-add-key-based-replacements
+    "<SPC> k" "lisp")
+  (evil-define-key '(normal visual) 'global
+    (kbd "<SPC>kw") #'sp-wrap-round
+    (kbd "<SPC>k(") #'sp-wrap-round
+    (kbd "<SPC>k)") #'sp-wrap-round
+    (kbd "<SPC>k[") #'sp-wrap-square
+    (kbd "<SPC>k]") #'sp-wrap-square
+    (kbd "<SPC>k{") #'sp-wrap-curly
+    (kbd "<SPC>k}") #'sp-wrap-curly
+    (kbd "<SPC>kr") #'sp-raise-sexp
+    (kbs "<SPC>kt") #'sp-transpose-sexp
+    (kbd "<SPC>ks") #'sp-forward-slurp-sexp
+    (kbd "<SPC>kS") #'sp-backward-slurp-sexp
+    (kbd "<SPC>kb") #'sp-forward-barf-sexp
+    (kbd "<SPC>kB") #'sp-backward-barf-sexp))
 
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)
