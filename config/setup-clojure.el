@@ -36,9 +36,11 @@
     "ef" #'cider-eval-defun-at-point
     "el" #'cider-eval-list-at-point
     "es" #'cider-eval-sexp-at-point
+    "rr" #'eglot-rename
     "sqq" #'cider-quit)
   (which-key-add-key-based-replacements
     ", e" "evaluation"
+    ", r" "refactor"
     ", s" "send to repl"
     ", sq" "quit/restart repl"
     ))
