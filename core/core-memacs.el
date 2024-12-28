@@ -37,6 +37,10 @@
   (evil-define-key '(normal visual) 'global
     "gc" #'evilnc-comment-operator))
 
+(use-package evil-mc
+  :config
+  (global-evil-mc-mode 1))
+
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
