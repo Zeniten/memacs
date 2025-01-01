@@ -1,5 +1,6 @@
 (use-package gptel
   :custom
+  (gptel-default-mode #'org-mode)
   (gptel-model 'gpt-4o)
   :config
   (which-key-add-key-based-replacements
