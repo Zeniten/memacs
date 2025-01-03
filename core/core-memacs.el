@@ -41,6 +41,16 @@
   :config
   (global-evil-mc-mode 1))
 
+;; https://github.com/syl20bnr/spacemacs/blob/b0591a8ba9b4709bb18b354ae162400852378114/layers/%2Bspacemacs/spacemacs-editing/packages.el#L175
+(use-package expand-region
+  :defer t
+  :custom
+  (expand-region-contract-fast-key "V")
+  (expand-region-reset-fast-key "r")
+  :config
+  (evil-define-key '(normal visual) 'global
+    (kbd "<SPC>v") #'er/expand-region))
+
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
