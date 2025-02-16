@@ -157,9 +157,7 @@
   (recentf-mode 1))
 
 ;; Example configuration for Consult
-(use-package consult
-  :custom
-  (consult-preview-key nil))
+(use-package consult)
 
 (require 'core-memacs)
 (require 'setup-general)
