@@ -52,6 +52,7 @@
 (use-package cider
   :defer t
   :custom
+  (cider-download-java-sources t)
   (cider-repl-pop-to-buffer-on-connect nil))
 
 (provide 'setup-clojure)
