@@ -6,7 +6,9 @@
   (scroll-step 1)
 
   ;; helping
-  (help-window-select t))
+  (help-window-select t)
+  :config
+  (load-theme 'modus-operandi-tinted))
 
 (use-package evil
   :init
@@ -61,37 +63,56 @@
   :init
   (winum-mode 1))
 
-(use-package catppuccin-theme
-  :custom
-  (catppuccin-flavor 'latte)
-  :config
-  (load-theme 'catppuccin :no-confirm)
+;; how to achieve: select window 1..9
+;; (with-eval-after-load 'winum
+;;   (setq winum-keymap
+;;         (let ((map (make-sparse-keymap)))
+;;           (define-key map (kbd "C-x w 1") 'winum-select-window-1)
+;;           (define-key map (kbd "C-x w 2") 'winum-select-window-2)
+;;           (define-key map (kbd "C-x w 3") 'winum-select-window-3)
+;;           (define-key map (kbd "C-x w 4") 'winum-select-window-4)
+;;           (define-key map (kbd "C-x w 5") 'winum-select-window-5)
+;;           (define-key map (kbd "C-x w 6") 'winum-select-window-6)
+;;           (define-key map (kbd "C-x w 7") 'winum-select-window-7)
+;;           (define-key map (kbd "C-x w 8") 'winum-select-window-8)
+;;           (define-key map (kbd "C-x w 9") 'winum-select-window-9)
+;;           map)))
 
-  (defvar my-catppuccin-themes '(latte frappe))
+;; (with-eval-after-load 'which-key
+;;   (which-key-add-key-based-replacements
+;;     "C-x w" "select window 1..9"))
 
-  (defun cycle-themes ()
-    "Cycle through Catppuccin theme flavors defined in `my-catppuccin-themes`."
-    (interactive)
-    (let ((rotated (nconc (cdr my-catppuccin-themes) (list (car my-catppuccin-themes)))))
-      (setq catppuccin-flavor (car (setq my-catppuccin-themes rotated)))
-      (load-theme 'catppuccin :no-confirm)
-      (message "Switched to Catppuccin theme: %s" (symbol-name catppuccin-flavor))))
+;; (use-package catppuccin-theme
+;;   :custom
+;;   (catppuccin-flavor 'latte)
+;;   :config
+;;   (load-theme 'catppuccin :no-confirm)
 
-  ;; Load fallback theme if Catppuccin fails
-  (add-hook 'after-init-hook
-            (lambda ()
-              (unless (featurep 'catppuccin-theme)
-                (load-theme 'deeper-blue t))))
+;;   (defvar my-catppuccin-themes '(latte frappe))
 
-  (which-key-add-key-based-replacements
-    "<SPC> t" "theme"
-    )
-  (evil-define-key '(normal visual) 'global
-    (kbd "<SPC>tc") #'cycle-themes)
+;;   (defun cycle-themes ()
+;;     "Cycle through Catppuccin theme flavors defined in `my-catppuccin-themes`."
+;;     (interactive)
+;;     (let ((rotated (nconc (cdr my-catppuccin-themes) (list (car my-catppuccin-themes)))))
+;;       (setq catppuccin-flavor (car (setq my-catppuccin-themes rotated)))
+;;       (load-theme 'catppuccin :no-confirm)
+;;       (message "Switched to Catppuccin theme: %s" (symbol-name catppuccin-flavor))))
 
-  ;; TODO What if Catppuccin fails?
-  ;(global-set-key (kbd "C-c t") 'cycle-themes)
-  )
+;;   ;; Load fallback theme if Catppuccin fails
+;;   (add-hook 'after-init-hook
+;;             (lambda ()
+;;               (unless (featurep 'catppuccin-theme)
+;;                 (load-theme 'deeper-blue t))))
+
+;;   (which-key-add-key-based-replacements
+;;     "<SPC> t" "theme"
+;;     )
+;;   (evil-define-key '(normal visual) 'global
+;;     (kbd "<SPC>tc") #'cycle-themes)
+
+;;   ;; TODO What if Catppuccin fails?
+;;   ;(global-set-key (kbd "C-c t") 'cycle-themes)
+;;   )
 
 (which-key-add-key-based-replacements
   "<SPC> f" "file"
