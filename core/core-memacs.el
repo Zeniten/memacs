@@ -200,4 +200,9 @@
 (use-package esup
   :defer t)
 
+(use-package auto-dark
+  :custom
+  (auto-dark-themes '((modus-vivendi-tinted) (modus-operandi-tinted)))
+  :init (auto-dark-mode))
+
 (provide 'core-memacs)
