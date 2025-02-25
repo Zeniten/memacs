@@ -6,9 +6,24 @@
   (scroll-step 1)
 
   ;; helping
-  (help-window-select t)
+  (help-window-select t))
+
+(use-package modus-themes
+  :custom
+  (modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
   :config
-  (load-theme 'modus-operandi-tinted))
+  (load-theme 'modus-operandi-tinted)
+
+  (which-key-add-key-based-replacements
+    "<SPC> t" "theme"
+    )
+  (evil-define-key '(normal visual) 'global
+    (kbd "<SPC>tt") #'modus-themes-toggle)
+  )
+
+(use-package eglot
+  :custom
+  (eglot-events-buffer-size 0))
 
 (use-package evil
   :init
