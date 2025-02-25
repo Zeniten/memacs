@@ -8,19 +8,6 @@
   ;; helping
   (help-window-select t))
 
-(use-package modus-themes
-  :custom
-  (modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
-  :config
-  (load-theme 'modus-operandi-tinted)
-
-  (which-key-add-key-based-replacements
-    "<SPC> t" "theme"
-    )
-  (evil-define-key '(normal visual) 'global
-    (kbd "<SPC>tt") #'modus-themes-toggle)
-  )
-
 (use-package eglot
   :custom
   (eglot-events-buffer-size 0))
@@ -57,6 +44,19 @@
 (use-package evil-mc
   :config
   (global-evil-mc-mode 1))
+
+(use-package modus-themes
+  :custom
+  (modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
+  :config
+  (load-theme 'modus-operandi-tinted)
+
+  (which-key-add-key-based-replacements
+    "<SPC> t" "theme"
+    )
+  (evil-define-key '(normal visual) 'global
+    (kbd "<SPC>tt") #'modus-themes-toggle)
+  )
 
 ;; https://github.com/syl20bnr/spacemacs/blob/b0591a8ba9b4709bb18b354ae162400852378114/layers/%2Bspacemacs/spacemacs-editing/packages.el#L175
 (use-package expand-region
