@@ -10,7 +10,7 @@
 
 (use-package eglot
   :custom
-  (eglot-events-buffer-size 0))
+  (eglot-events-buffer-config '(:size 0 :format full)))
 
 (use-package evil
   :init
