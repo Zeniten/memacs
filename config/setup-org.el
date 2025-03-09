@@ -8,13 +8,14 @@
   (org-startup-folded t)
   (org-startup-indented t)
   :config
-  (my-leader-def
-    :keymaps '(org-mode-map)
-    "ib" #'org-insert-structure-template
-    "bd" #'org-babel-demarcate-block)
   (which-key-add-key-based-replacements
     ", i" "insert"
     ", b" "babel")
+  (my-leader-def
+    :keymaps '(org-mode-map)
+    "ib" #'org-insert-structure-template
+    "il" #'org-insert-link
+    "bd" #'org-babel-demarcate-block)
 
   (org-babel-do-load-languages
    'org-babel-load-languages
