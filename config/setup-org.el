@@ -14,6 +14,8 @@
   (my-leader-def
     :keymaps '(org-mode-map)
     "ib" #'org-insert-structure-template
+    "ih" #'org-insert-heading
+    "iH" #'org-insert-heading-after-current
     "il" #'org-insert-link
     "bd" #'org-babel-demarcate-block)
 
