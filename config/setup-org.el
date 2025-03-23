@@ -2,8 +2,9 @@
   :defer t
   :hook
   (org-mode . (lambda ()
-		(setq-local fill-column 80) ; Set fill-column locally for Org-mode
-		(auto-fill-mode 1)))
+                (setq-local fill-column 80) ; Set fill-column locally for Org-mode
+                (auto-fill-mode 1)
+                (add-hook 'before-save-hook #'whitespace-cleanup nil t)))
   :custom
   (org-startup-folded t)
   (org-startup-indented t)
