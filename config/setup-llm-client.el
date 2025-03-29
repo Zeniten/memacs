@@ -12,4 +12,9 @@
     (kbd "<SPC>ls") #'gptel-send)
   )
 
+(use-package aidermacs
+  :config
+  (evil-define-key '(normal visual) 'global
+    (kbd "<SPC>le") #'aidermacs-transient-menu))
+
 (provide 'setup-llm-client)
