@@ -7,12 +7,12 @@
 ;; Keep tabs on startup time
 
 (add-hook 'emacs-startup-hook
-          (lambda ()
-            (message "Emacs ready in %s with %d garbage collections."
-                     (format "%.2f seconds"
-                             (float-time
-                              (time-subtract after-init-time before-init-time)))
-                     gcs-done)))
+	  (lambda ()
+	    (message "Emacs ready in %s with %d garbage collections."
+		     (format "%.2f seconds"
+			     (float-time
+			      (time-subtract after-init-time before-init-time)))
+		     gcs-done)))
 
 ;; start emacs in fullscreen
 (add-hook 'emacs-startup-hook 'toggle-frame-maximized)
@@ -26,9 +26,9 @@
 ;; TODO Set only for certain modes
 
 (add-hook 'after-init-hook
-             (lambda ()
-               (setq display-line-numbers-type 'relative)
-               (add-hook 'prog-mode-hook 'display-line-numbers-mode)))
+	  (lambda ()
+	    (setq display-line-numbers-type 'relative)
+	    (add-hook 'prog-mode-hook 'display-line-numbers-mode)))
 
 ;; PERF: Shave seconds off startup time by starting the scratch buffer in
 ;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
@@ -48,10 +48,10 @@
 
 ;; Fonts
 ;; (set-face-attribute 'default nil :font "Fira Code"
-;; 		                 :height 113)
+;;				 :height 113)
 (add-hook 'after-init-hook
-          (lambda ()
-            (set-face-attribute 'default nil :font "Fira Code" :height 113)))
+	  (lambda ()
+	    (set-face-attribute 'default nil :font "Fira Code" :height 113)))
 
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
 ;; TODO use-short-answers
@@ -70,13 +70,13 @@
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+		 (concat user-emacs-directory "backups")))))
 
-;(defvar space-map (make-sparse-keymap)
-;  "Keymap for SPC commands.")
+					;(defvar space-map (make-sparse-keymap)
+					;  "Keymap for SPC commands.")
 
-;(define-key space-map (kbd "gs") 'magit-status)
-;(global-set-key (kbd "SPC") space-map)
+					;(define-key space-map (kbd "gs") 'magit-status)
+					;(global-set-key (kbd "SPC") space-map)
 
 ;; use use-package
 (require 'use-package)
@@ -87,13 +87,13 @@
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
 	("NonGNU ELPA"  . "https://elpa.gnu.org/nongnu/")
-        ("MELPA Stable" . "https://stable.melpa.org/packages/")
-        ("MELPA"        . "https://melpa.org/packages/"))
+	("MELPA Stable" . "https://stable.melpa.org/packages/")
+	("MELPA"        . "https://melpa.org/packages/"))
       package-archive-priorities
       '(("GNU ELPA"     . 4)
 	("NonGNU ELPA"  . 3)
-        ("MELPA"        . 2)
-        ("MELPA Stable" . 1)))
+	("MELPA"        . 2)
+	("MELPA Stable" . 1)))
 
 (use-package auto-package-update
   :custom
@@ -132,7 +132,7 @@
 
 ;; Enrich existing commands with completion annotations
 (use-package marginalia
-  :config 
+  :config
   (marginalia-mode 1))
 
 ;; Optionally use the `orderless' completion style: order of expressions doesn't matter for search.
@@ -142,8 +142,9 @@
   ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
   (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles partial-completion)))))
+
 
 (use-package corfu
   :custom
