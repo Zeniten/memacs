@@ -169,3 +169,4 @@
 (require 'setup-clojure)
 (require 'setup-typescript)
 (require 'setup-markdown)
+(require 'setup-sql)
