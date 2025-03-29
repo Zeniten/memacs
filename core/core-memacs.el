@@ -99,38 +99,6 @@
 ;;   (which-key-add-key-based-replacements
 ;;     "C-x w" "select window 1..9"))
 
-;; (use-package catppuccin-theme
-;;   :custom
-;;   (catppuccin-flavor 'latte)
-;;   :config
-;;   (load-theme 'catppuccin :no-confirm)
-
-;;   (defvar my-catppuccin-themes '(latte frappe))
-
-;;   (defun cycle-themes ()
-;;     "Cycle through Catppuccin theme flavors defined in `my-catppuccin-themes`."
-;;     (interactive)
-;;     (let ((rotated (nconc (cdr my-catppuccin-themes) (list (car my-catppuccin-themes)))))
-;;       (setq catppuccin-flavor (car (setq my-catppuccin-themes rotated)))
-;;       (load-theme 'catppuccin :no-confirm)
-;;       (message "Switched to Catppuccin theme: %s" (symbol-name catppuccin-flavor))))
-
-;;   ;; Load fallback theme if Catppuccin fails
-;;   (add-hook 'after-init-hook
-;;             (lambda ()
-;;               (unless (featurep 'catppuccin-theme)
-;;                 (load-theme 'deeper-blue t))))
-
-;;   (which-key-add-key-based-replacements
-;;     "<SPC> t" "theme"
-;;     )
-;;   (evil-define-key '(normal visual) 'global
-;;     (kbd "<SPC>tc") #'cycle-themes)
-
-;;   ;; TODO What if Catppuccin fails?
-;;   ;(global-set-key (kbd "C-c t") 'cycle-themes)
-;;   )
-
 (which-key-add-key-based-replacements
   "<SPC> f" "file"
   "<SPC> h" "help"

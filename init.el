@@ -94,21 +94,6 @@
   :config
   (auto-package-update-maybe))
 
-;; idea: https://www.rahuljuliato.com/posts/auto-dark-catppuccin
-;; (use-package auto-dark
-;;   :custom
-;;   (auto-dark-themes '((catppuccin) (catppuccin)))
-;;   :hook
-;;   (auto-dark-dark-mode
-;;    . (lambda ()
-;;        (setq catppuccin-flavor 'frappe)
-;;        (catppuccin-reload)))
-;;   (auto-dark-light-mode
-;;    . (lambda ()
-;;        (setq catppuccin-flavor 'latte)
-;;        (catppuccin-reload)))
-;;   :config (auto-dark-mode 1))
-
 (use-package vertico
   :config
   (define-key vertico-map (kbd "C-j") #'vertico-next)
