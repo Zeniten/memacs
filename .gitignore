@@ -1,18 +1,22 @@
-# temporary and backup files
 *~
 .#*
+.aider*
 .last-package-update-day
+.org-id-locations
 \#*\#
-session.*
-
 auto-save-list/
 backups/
+bookmarks
 eln-cache/
 elpa/
 history
+multisession/
+newsticker/
 org-roam.db
 projects
 recentf
+session.*
 tramp
 transient/
 tree-sitter/
+url/
