@@ -8,6 +8,11 @@
   :custom
   (org-startup-folded t)
   (org-startup-indented t)
+  (org-pretty-entities t)
+  (org-hide-emphasis-markers t)
+  ;; doesn't work:
+  ;; (org-global-properties
+  ;;  '(("Asked" . ":")))
   :config
   (which-key-add-key-based-replacements
     ", i" "insert"
@@ -18,6 +23,8 @@
     "ih" #'org-insert-heading
     "iH" #'org-insert-heading-after-current
     "il" #'org-insert-link
+    "in" #'org-add-note
+    "it" #'tempel-insert
     "bd" #'org-babel-demarcate-block)
 
   (org-babel-do-load-languages
@@ -28,13 +35,13 @@
   :defer t
   :custom
   (org-roam-directory (file-truename "~/Dropbox/org/"))
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n g" . org-roam-graph)
-         ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture)
-         ;; Dailies
-         ("C-c n j" . org-roam-dailies-capture-today))
+  ;; :bind (("C-c n l" . org-roam-buffer-toggle)
+  ;;        ("C-c n f" . org-roam-node-find)
+  ;;        ("C-c n g" . org-roam-graph)
+  ;;        ("C-c n i" . org-roam-node-insert)
+  ;;        ("C-c n c" . org-roam-capture)
+  ;;        ;; Dailies
+  ;;        ("C-c n j" . org-roam-dailies-capture-today))
   :config
   ;; Advice to ensure we always switch focus to the org-roam buffer
   (defun my-org-roam-focus-buffer (&rest _)
@@ -43,6 +50,16 @@
       (select-window window))) ;; Explicitly select the `*org-roam*` window
 
   (advice-add 'org-roam-buffer-toggle :after #'my-org-roam-focus-buffer)
+
+  (which-key-add-key-based-replacements
+    ", r" "roam")
+  (my-leader-def
+    :keymaps '(org-mode-map)
+    "rc" #'org-roam-capture
+    "ri" #'org-roam-node-insert
+    "rl" #'org-roam-buffer-toggle
+    "rf" #'org-roam-node-find
+    )
 
   ;; Enable Org-Roam's database autosync
   (org-roam-db-autosync-mode))
