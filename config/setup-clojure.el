@@ -55,4 +55,8 @@
   (cider-download-java-sources t)
   (cider-repl-pop-to-buffer-on-connect nil))
 
+(use-package cider-storm
+  :after cider
+  :vc (:url "https://github.com/flow-storm/cider-storm" :rev :newest))
+
 (provide 'setup-clojure)
