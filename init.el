@@ -145,6 +145,28 @@
 	completion-category-defaults nil
 	completion-category-overrides '((file (styles partial-completion)))))
 
+(defun memacs/current-org-level ()
+  "Return current Org heading level or 0 if not in a heading."
+  (or (save-excursion
+	(ignore-errors
+	  (org-back-to-heading t)
+	  (when (looking-at org-outline-regexp)
+	    (- (match-end 0) (match-beginning 0) 1))))
+      0))
+
+;; LSP servers provides snippets! Some Eglot + TempEL solutions:
+;; - https://github.com/svaante/lsp-snippet
+;; - https://github.com/fejfighter/eglot-tempel
+(use-package tempel
+  :bind (("M-+" . tempel-complete)
+	 ("M-*" . tempel-insert))
+  :init
+  (defun tempel-setup-capf ()
+    (setq-local completion-at-point-functions
+		(cons #'tempel-expand
+		      completion-at-point-functions)))
+
+  (add-hook 'org-mode-hook #'tempel-setup-capf))
 
 (use-package corfu
   :custom
