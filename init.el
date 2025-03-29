@@ -54,9 +54,11 @@
             (set-face-attribute 'default nil :font "Fira Code" :height 113)))
 
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
+;; TODO use-short-answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Revert buffers when the underlying file has changed
+;; TODO Disable lock files?
 (global-auto-revert-mode 1)
 
 ;; Revert Dired and other buffers
