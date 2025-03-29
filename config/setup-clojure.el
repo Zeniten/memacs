@@ -1,3 +1,33 @@
+(defun me/cursor-at-parenthesis-p ()
+  "Return non-nil if the cursor is over a parenthesis."
+  (let ((syntax (syntax-class (syntax-after (point)))))
+    (or (eq syntax (car (string-to-syntax "(")))
+        (eq syntax (car (string-to-syntax ")"))))))
+
+(defun me/sp-move-sexp-up ()
+  "Move the current s-expression up."
+  (interactive)
+  (if (looking-back "(")
+      (message "Cannot move past superior level")
+    (progn (forward-sexp)
+	   (transpose-sexps -1)
+	   (backward-sexp))))
+
+(defun me/sp-move-sexp-down ()
+  "Move the current s-expression down."
+  (interactive)
+  (forward-sexp)
+  (if (me/cursor-at-parenthesis-p)
+      (progn (message "Cannot move past superior level")
+	     (backward-sexp))
+    (progn (transpose-sexps 1)
+	   (backward-sexp))))
+
+;; (foo (fisk test naa))
+;; (if (= 1 3)
+;;     "foo"
+;;   "bar")
+
 (use-package smartparens
   :defer t
   :hook (prog-mode)
@@ -7,6 +37,8 @@
   (which-key-add-key-based-replacements
     "<SPC> k" "lisp")
   (evil-define-key '(normal visual) 'global
+    (kbd "M-k") #'me/sp-move-sexp-up
+    (kbd "M-j") #'me/sp-move-sexp-down
     (kbd "<SPC>kw") #'sp-wrap-round
     (kbd "<SPC>k(") #'sp-wrap-round
     (kbd "<SPC>k)") #'sp-wrap-round
