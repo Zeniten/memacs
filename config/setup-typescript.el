@@ -63,8 +63,8 @@
   :config
   (os/setup-install-grammars))
 
-(use-package typescript-ts-mode
-  :hook ((typescript-ts-mode . eglot-ensure)))
+;; (use-package typescript-ts-mode
+;;   :hook ((typescript-ts-mode . eglot-ensure)))
 
 (use-package css-mode
   :ensure nil
