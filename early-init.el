@@ -25,6 +25,14 @@
 ;;      (setq file-name-handler-alist file-name-handler-alist-original)
 ;;      (makunbound 'file-name-handler-alist-original)))
 
+
+;; Resizing the Emacs frame can be a terribly expensive part of changing the
+;; font. By inhibiting this, we easily halve startup times with fonts that are
+;; larger than the system default.
+;; - https://github.com/LionyxML/emacs-solo/blob/main/early-init.el
+(setq frame-inhibit-implied-resize t
+      frame-resize-pixelwise t)
+
 (add-hook 'emacs-startup-hook
   (lambda ()
     (setq gc-cons-threshold 16777216 ; 16mb
