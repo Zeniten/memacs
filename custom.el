@@ -10,11 +10,14 @@
      "de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0" default))
  '(nano-modeline-position 'nano-modeline-footer)
  '(package-selected-packages
-   '(anki-editor auto-dark auto-package-update cider clojure-ts-mode consult corfu
-		 eros esup evil-collection evil-mc evil-nerd-commenter
-		 expand-region general git-timemachine gptel magit marginalia
-		 markdown-mode modus-themes orderless org-roam smartparens
-		 vertico which-key winum))
+   '(aidermacs anki-editor auto-dark auto-package-update cider-storm
+	       clojure-ts-mode consult corfu eros esup evil-collection evil-mc
+	       evil-nerd-commenter expand-region general git-timemachine gptel
+	       magit marginalia markdown-mode modus-themes orderless org-roam
+	       smartparens sqlformat tempel try vertico which-key winum))
+ '(package-vc-selected-packages
+   '((cider-storm :url "https://github.com/flow-storm/cider-storm")
+     (anki-editor-ui :url "https://github.com/anki-editor/anki-editor")))
  '(safe-local-variable-values '((cider-clojure-cli-aliases . "-A:dev"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
