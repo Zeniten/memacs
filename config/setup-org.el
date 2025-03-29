@@ -52,6 +52,18 @@
 
 ;; anki-editor
 ;; https://github.com/anki-editor/anki-editor
+(use-package anki-editor
+  :vc (:url "https://github.com/anki-editor/anki-editor" :rev :newest)
+  :defer t
+  :config
+  (which-key-add-key-based-replacements
+    ", a" "anki-editor")
+  (my-leader-def
+    :keymaps '(org-mode-map)
+    "ai" #'anki-editor-insert-note
+    "ap" #'anki-editor-push-notes
+    )
+  )
 
 ;;;; https://github.com/orgtre/ankiorg
 
