@@ -3,3 +3,4 @@
 - https://github.com/magnars/emacsd-reboot
 - https://erick.navarro.io/blog/switching-from-helm-to-vertico-and-friends/
 - https://github.com/mattduck/dotfiles/blob/master/emacs.2023.symlink/init.org
+- https://github.com/LionyxML/emacs-solo
