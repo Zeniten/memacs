@@ -18,11 +18,6 @@
 (add-hook 'emacs-startup-hook 'toggle-frame-maximized)
 
 
-(set-language-environment "UTF-8")
-;; explicitly set the preferred coding systems to avoid annoying prompt
-;; from emacs (especially on Microsoft Windows)
-(prefer-coding-system 'utf-8)
-
 ;; TODO Set only for certain modes
 
 (add-hook 'after-init-hook
@@ -34,12 +29,7 @@
 ;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
 ;;   pull in a ton of packages. `doom/open-scratch-buffer' provides a better
 ;;   scratch buffer anyway.
-(setq inhibit-startup-screen t			; skip startup screen
-      initial-major-mode 'fundamental-mode	; test
-      initial-scratch-message nil		; clean scratch buffer
-      ring-bell-function 'ignore		; quiet
-      sentence-end-double-space nil
-      )
+(setq sentence-end-double-space nil)
 
 ;; Some variables are buffer-local, so changing them using setq will only change
 ;; them in a single buffer. Using setq-default, we change the buffer-local variable's

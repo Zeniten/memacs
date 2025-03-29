@@ -18,6 +18,17 @@
 (tool-bar-mode -1)            ; disable tool bar (big buttons)
 (tooltip-mode -1)             ; disable tooltips
 
+;; Set language and encoding early
+(set-language-environment "UTF-8")
+(prefer-coding-system 'utf-8)
+
+;; Inhibit splash screen and set up initial buffer behavior
+(setq inhibit-startup-screen t          ; skip startup screen
+      initial-major-mode 'fundamental-mode ; faster startup
+      initial-scratch-message nil       ; clean scratch buffer
+      ring-bell-function 'ignore        ; quiet
+      )
+
 ;; (run-with-idle-timer
 ;;    5 nil
 ;;    (lambda ()
