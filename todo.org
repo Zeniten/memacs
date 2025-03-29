@@ -1,3 +1,4 @@
+* Do I need to remove anything regarding =which-key= now that it's built-in?
 * Set up jet.el
 :PROPERTIES:
 :ADDED:    <2024-12-09 Mon>
