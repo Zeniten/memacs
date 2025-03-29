@@ -1,10 +1,10 @@
-(defun me/cursor-at-parenthesis-p ()
+(defun memacs/cursor-at-parenthesis-p ()
   "Return non-nil if the cursor is over a parenthesis."
   (let ((syntax (syntax-class (syntax-after (point)))))
     (or (eq syntax (car (string-to-syntax "(")))
         (eq syntax (car (string-to-syntax ")"))))))
 
-(defun me/sp-move-sexp-up ()
+(defun memacs/sp-move-sexp-up ()
   "Move the current s-expression up."
   (interactive)
   (if (looking-back "(")
@@ -13,11 +13,11 @@
 	   (transpose-sexps -1)
 	   (backward-sexp))))
 
-(defun me/sp-move-sexp-down ()
+(defun memacs/sp-move-sexp-down ()
   "Move the current s-expression down."
   (interactive)
   (forward-sexp)
-  (if (me/cursor-at-parenthesis-p)
+  (if (memacs/cursor-at-parenthesis-p)
       (progn (message "Cannot move past superior level")
 	     (backward-sexp))
     (progn (transpose-sexps 1)
@@ -37,8 +37,8 @@
   (which-key-add-key-based-replacements
     "<SPC> k" "lisp")
   (evil-define-key '(normal visual) 'global
-    (kbd "M-k") #'me/sp-move-sexp-up
-    (kbd "M-j") #'me/sp-move-sexp-down
+    (kbd "M-k") #'memacs/sp-move-sexp-up
+    (kbd "M-j") #'memacs/sp-move-sexp-down
     (kbd "<SPC>kw") #'sp-wrap-round
     (kbd "<SPC>k(") #'sp-wrap-round
     (kbd "<SPC>k)") #'sp-wrap-round
@@ -61,7 +61,7 @@
          (clojurescript-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure))
   :config
-  (my-leader-def
+  (memacs/leader-def
     :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
     "'" #'sesman-start
     "eb" #'cider-load-buffer

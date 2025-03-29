@@ -152,12 +152,12 @@
   "<SPC> SPC" "M-x"
 )
 
-(defun memacs-split-window-right-and-focus ()
+(defun memacs/split-window-right-and-focus ()
   (interactive)
   (split-window-right)
   (other-window 1))
 
-(defun memacs-split-window-below-and-focus ()
+(defun memacs/split-window-below-and-focus ()
   (interactive)
   (split-window-below)
   (other-window 1))
@@ -191,9 +191,9 @@
   (kbd "<SPC>bb") #'consult-buffer
 
   (kbd "<SPC>wv") #'split-window-right
-  (kbd "<SPC>wV") #'memacs-split-window-right-and-focus
+  (kbd "<SPC>wV") #'memacs/split-window-right-and-focus
   (kbd "<SPC>ws") #'split-window-below
-  (kbd "<SPC>wS") #'memacs-split-window-below-and-focus
+  (kbd "<SPC>wS") #'memacs/split-window-below-and-focus
   (kbd "<SPC>wK") #'evil-window-move-very-top
   (kbd "<SPC>wH") #'evil-window-move-far-left
   (kbd "<SPC>wJ") #'evil-window-move-very-bottom

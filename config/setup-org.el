@@ -17,7 +17,7 @@
   (which-key-add-key-based-replacements
     ", i" "insert"
     ", b" "babel")
-  (my-leader-def
+  (memacs/leader-def
     :keymaps '(org-mode-map)
     "ib" #'org-insert-structure-template
     "ih" #'org-insert-heading
@@ -44,16 +44,16 @@
   ;;        ("C-c n j" . org-roam-dailies-capture-today))
   :config
   ;; Advice to ensure we always switch focus to the org-roam buffer
-  (defun my-org-roam-focus-buffer (&rest _)
+  (defun memacs/org-roam-focus-buffer (&rest _)
     "Ensure focus moves to the `*org-roam*` buffer when toggled."
     (when-let ((window (get-buffer-window "*org-roam*")))
       (select-window window))) ;; Explicitly select the `*org-roam*` window
 
-  (advice-add 'org-roam-buffer-toggle :after #'my-org-roam-focus-buffer)
+  (advice-add 'org-roam-buffer-toggle :after #'memacs/org-roam-focus-buffer)
 
   (which-key-add-key-based-replacements
     ", r" "roam")
-  (my-leader-def
+  (memacs/leader-def
     :keymaps '(org-mode-map)
     "rc" #'org-roam-capture
     "ri" #'org-roam-node-insert
@@ -75,7 +75,7 @@
   :config
   (which-key-add-key-based-replacements
     ", a" "anki-editor")
-  (my-leader-def
+  (memacs/leader-def
     :keymaps '(org-mode-map)
     "ai" #'anki-editor-insert-note
     "ap" #'anki-editor-push-notes

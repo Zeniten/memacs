@@ -21,7 +21,7 @@
          ;; More modes defined here...
          )
   :preface
-  (defun os/setup-install-grammars ()
+  (defun memacs/setup-install-grammars ()
     "Install Tree-sitter grammars if they are absent."
     (interactive)
     (dolist (grammar
@@ -61,7 +61,7 @@
              (sh-base-mode . bash-ts-mode)))
     (add-to-list 'major-mode-remap-alist mapping))
   :config
-  (os/setup-install-grammars))
+  (memacs/setup-install-grammars))
 
 ;; (use-package typescript-ts-mode
 ;;   :hook ((typescript-ts-mode . eglot-ensure)))

@@ -1,5 +1,5 @@
 ;; Idea: go to end of list, call `eros-eval-last-sexp'
-(defun my-eval-list-at-point ()
+(defun memacs/eval-list-at-point ()
   "Evaluate the top-level list at point, similar to `cider-eval-list-at-point` in Clojure.
 Displays the result in the minibuffer."
   (interactive)
@@ -20,19 +20,19 @@ Displays the result in the minibuffer."
             ;; Display the result in the minibuffer
             (message "Result: %s" result)))))))
 
-(defun memacs-align-lisp-comments ()
+(defun memacs/align-lisp-comments ()
   "Align comments marked with ';'."
   (interactive)
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\);"))
 
 (use-package eros
   :config
-  (my-leader-def
+  (memacs/leader-def
     :keymaps 'emacs-lisp-mode-map
-    "a" #'memacs-align-lisp-comments
+    "a" #'memacs/align-lisp-comments
     "eb" 'eval-buffer
     "ef" 'eros-eval-defun
-    "el" 'my-eval-list-at-point
+    "el" 'memacs/eval-list-at-point
     "es" 'eros-eval-last-sexp)
   (which-key-add-key-based-replacements
     ", e" "evaluation")
