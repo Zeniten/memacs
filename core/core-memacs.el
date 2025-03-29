@@ -1,4 +1,5 @@
 (use-package emacs
+  :ensure nil
   :custom
   ;; scrolling
   (scroll-conservatively 1000) ;; ensure cursor keeps its placement when jumping to end of buffer
@@ -68,6 +69,7 @@
     (kbd "<SPC>v") #'er/expand-region))
 
 (use-package which-key
+  :ensure nil
   :init
   (setq which-key-idle-delay 0.4
 	which-key-idle-secondary-delay 0.05)
