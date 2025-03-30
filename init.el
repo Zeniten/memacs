@@ -73,7 +73,6 @@
 (setq use-package-always-ensure t) ; download package if not there
 
 ;; set places to find packages
-;; TODO Hvorfor har du ikke med nongnu elpa?
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
 	("NonGNU ELPA"  . "https://elpa.gnu.org/nongnu/")
