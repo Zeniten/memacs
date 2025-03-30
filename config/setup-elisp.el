@@ -27,15 +27,14 @@ Displays the result in the minibuffer."
 
 (use-package eros
   :config
-  (memacs/leader-def
-    :keymaps 'emacs-lisp-mode-map
-    "a" #'memacs/align-lisp-comments
-    "eb" 'eval-buffer
-    "ef" 'eros-eval-defun
-    "el" 'memacs/eval-list-at-point
-    "es" 'eros-eval-last-sexp)
-  (which-key-add-key-based-replacements
-    ", e" "evaluation")
+  (memacs/minor-leader-def
+  :keymaps 'emacs-lisp-mode-map
+  "e"  '(:ignore t :which-key "evaluation")
+  "a"  '(memacs/align-lisp-comments :which-key "align lisp comments")
+  "eb" '(eval-buffer :which-key "eval buffer")
+  "ef" '(eros-eval-defun :which-key "eval defun")
+  "el" '(memacs/eval-list-at-point :which-key "eval list")
+  "es" '(eros-eval-last-sexp :which-key "eval last sexp"))
   (eros-mode 1))
 
 (provide 'setup-elisp)

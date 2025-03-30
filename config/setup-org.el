@@ -17,7 +17,7 @@
   (which-key-add-key-based-replacements
     ", i" "insert"
     ", b" "babel")
-  (memacs/leader-def
+  (memacs/minor-leader-def
     :keymaps '(org-mode-map)
     "ib" #'org-insert-structure-template
     "ih" #'org-insert-heading
@@ -53,7 +53,7 @@
 
   (which-key-add-key-based-replacements
     ", r" "roam")
-  (memacs/leader-def
+  (memacs/minor-leader-def
     :keymaps '(org-mode-map)
     "rc" #'org-roam-capture
     "ri" #'org-roam-node-insert
@@ -75,7 +75,7 @@
   :config
   (which-key-add-key-based-replacements
     ", a" "anki-editor")
-  (memacs/leader-def
+  (memacs/minor-leader-def
     :keymaps '(org-mode-map)
     "ai" #'anki-editor-insert-note
     "ap" #'anki-editor-push-notes

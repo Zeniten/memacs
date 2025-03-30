@@ -3,18 +3,16 @@
   (gptel-default-mode #'org-mode)
   (gptel-model 'gpt-4o)
   :config
-  (which-key-add-key-based-replacements
-    "<SPC> l" "llm")
-  (evil-define-key '(normal visual) 'global
-    (kbd "<SPC>la") #'gptel-add  ; add context
-    (kbd "<SPC>lm") #'gptel-menu ; transient menu for preference, etc.
-    (kbd "<SPC>lr") #'gptel-rewrite
-    (kbd "<SPC>ls") #'gptel-send)
-  )
+  (memacs/leader-def
+    "l" '(:ignore t :which-key "llm")
+    "la" 'gptel-add
+    "lm" 'gptel-menu
+    "lr" 'gptel-rewrite
+    "ls" 'gptel-send))
 
 (use-package aidermacs
   :config
-  (evil-define-key '(normal visual) 'global
-    (kbd "<SPC>le") #'aidermacs-transient-menu))
+  (memacs/leader-def
+    "le" 'aidermacs-transient-menu))
 
 (provide 'setup-llm-client)

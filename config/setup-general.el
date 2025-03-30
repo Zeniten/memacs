@@ -5,8 +5,13 @@
   (general-create-definer memacs/leader-def
     :prefix "SPC" ;; Leader key
     :keymaps 'override ;; Use 'override to ensure these bindings take precedence
-    :states '(normal visual motion emacs) ;; Apply to multiple states
+    :states '(normal visual) ;; Apply to multiple states
     :non-normal-prefix "M-SPC") ;; Optional: prefix for non-normal states like Emacs state
+
+  (general-create-definer memacs/minor-leader-def
+    :prefix ","     ;; Leader key
+    :keymaps 'override
+    :states '(normal visual))
 
   (memacs/leader-def
     ;; File operations
@@ -80,7 +85,6 @@
     "tt" '(modus-themes-toggle :which-key "toggle theme")
 
     ;; Expand region
-    "v" '(er/expand-region :which-key "expand region")
-    )
+    "v" '(er/expand-region :which-key "expand region")))
 
 (provide 'setup-general)
