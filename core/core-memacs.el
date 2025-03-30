@@ -10,6 +10,7 @@
   (help-window-select t))
 
 (use-package eglot
+  :ensure nil
   :custom
   (eglot-events-buffer-config '(:size 0 :format full)))
 
@@ -96,6 +97,7 @@
   (kbd "TAB") #'indent-for-tab-command)
 
 (use-package eldoc
+  :ensure nil
   :custom
   (eldoc-display-functions '(eldoc-display-in-buffer)))
 
