@@ -25,7 +25,10 @@
 
 (use-package smartparens
   :defer t
-  :hook (prog-mode)
+  :hook ((emacs-lisp-mode . smartparens-mode)
+	 (clojure-mode . smartparens-mode)
+	 (clojurescript-mode . smartparens-mode)
+	 (clojure-mode . smartparens-mode))
   :config
   ;; load default config
   (require 'smartparens-config)
