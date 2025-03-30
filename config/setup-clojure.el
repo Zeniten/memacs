@@ -77,10 +77,6 @@
     ", sq" "quit/restart repl"
     ))
 
-(use-package eldoc
-  :custom
-  (eldoc-display-functions '(eldoc-display-in-buffer)))
-
 (use-package cider
   :defer t
   :custom

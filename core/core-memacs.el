@@ -186,6 +186,10 @@
   (kbd "TAB") #'indent-for-tab-command
   )
 
+(use-package eldoc
+  :custom
+  (eldoc-display-functions '(eldoc-display-in-buffer)))
+
 (use-package esup
   :defer t)
 
