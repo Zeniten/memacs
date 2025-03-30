@@ -47,13 +47,6 @@ https://github.com/alphapapa/magit-todos
 :ADDED:    <2025-03-30 Sun>
 :END:
 
-* TODO Add =html-to-hiccup=
-:PROPERTIES:
-:ADDED:    <2025-03-30 Sun>
-:END:
-
-https://github.com/plexus/html-to-hiccup
-
 * TODO Do I need to remove anything regarding =which-key= now that it's built-in?
 * TODO Set up jet.el
 :PROPERTIES:
@@ -98,6 +91,13 @@ https://github.com/mickeynp/combobulate
 :END:
 
 https://github.com/rainstormstudio/nerd-icons.el
+
+* DONE Add =html-to-hiccup=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+https://github.com/plexus/html-to-hiccup
 
 * DONE Set up gptel
 <2024-12-01 Sun>

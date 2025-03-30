@@ -90,4 +90,11 @@
     "df" '(cider-storm-debug-fn :which-key "function")
     "dt" '(cider-storm-toggle-recording :which-key "toggle debugger")))
 
+(use-package html-to-hiccup
+  :config
+  (memacs/minor-leader-def
+    :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+    "c" '(:ignore t :which-key "convert")
+    "ch" '(html-to-hiccup-convert-region :which-key "html->hiccup")))
+
 (provide 'setup-clojure)

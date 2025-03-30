@@ -13,8 +13,9 @@
    '(aidermacs anki-editor auto-dark auto-package-update cider-storm
 	       clojure-ts-mode consult corfu eros esup evil-collection evil-mc
 	       evil-nerd-commenter expand-region general git-timemachine gptel
-	       magit marginalia markdown-mode modus-themes orderless org-roam
-	       smartparens sqlformat tempel try vertico which-key winum))
+	       html-to-hiccup magit marginalia markdown-mode modus-themes
+	       orderless org-roam smartparens sqlformat tempel try vertico
+	       which-key winum))
  '(package-vc-selected-packages
    '((cider-storm :url "https://github.com/flow-storm/cider-storm")
      (anki-editor-ui :url "https://github.com/anki-editor/anki-editor")))
