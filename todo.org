@@ -1,13 +1,71 @@
-* Do I need to remove anything regarding =which-key= now that it's built-in?
-* Set up jet.el
+* TODO Consider using =whitespace-cleanup-mode=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+https://github.com/purcell/whitespace-cleanup-mode
+
+* TODO Check out =prodigy=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+https://github.com/rejeep/prodigy.el
+
+* TODO Pick a "REST client"
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+- https://github.com/pashky/restclient.el
+
+  The classic!
+
+- https://github.com/federicotdn/verb
+
+- https://github.com/JasZhe/hurl-mode
+
+- https://github.com/gregsexton/httprepl.el
+
+* TODO Check out =org-ql= and =org-rifle=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+- https://github.com/alphapapa/org-ql
+- https://github.com/alphapapa/org-rifle
+
+* TODO Add =magit-todos=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+https://github.com/alphapapa/magit-todos
+
+* TODO Add support for YAML
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+* TODO Add =html-to-hiccup=
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:END:
+
+https://github.com/plexus/html-to-hiccup
+
+* TODO Do I need to remove anything regarding =which-key= now that it's built-in?
+* TODO Set up jet.el
 :PROPERTIES:
 :ADDED:    <2024-12-09 Mon>
 :END:
 
 https://github.com/ericdallo/jet.el
 
-* Consider disabling Evil in modes like Info, Calendar, etc.
-<2024-12-07 Sat>
+* TODO Consider disabling Evil in modes like Info, Calendar, etc.
+:PROPERTIES:
+:ADDED:    <2024-12-07 Sat>
+:END:
 
 #+begin_quote
 u probably don't need Evil in Info, Dired, Calendar, and similar modes that
@@ -17,29 +75,30 @@ mode, something like this:
 (add-hook 'Info-mode (lambda () (setq evil-default-state 'emacs)))
 #+end_quote
 
-* List keybindings for window switching under one heading in which-key
+* TODO List keybindings for window switching under one heading in which-key
 :PROPERTIES:
-:REGISTERED: <2024-11-29 Fri>
+:ADDED:    <2024-11-29 Fri>
 :END:
-
-<2024-11-29 Fri>
 
 Like what Spacemacs does: 1..9: select window 1..9, instead of 1: window 1, 2:
 window 2, etc.
 
-* Set up TypeScript/JavaScript packages
+* TODO Set up TypeScript/JavaScript packages
 
 https://www.ovistoica.com/blog/2024-7-05-modern-emacs-typescript-web-tsx-config
 
-* Look into Combobulate
+* TODO Look into Combobulate
 
 https://github.com/mickeynp/combobulate
 
-* Add "SPC TAB"
-* Add Nerd Fonts
-<2024-11-10 Sun>
+* TODO Add "SPC TAB"
+* TODO Add Nerd Fonts
+:PROPERTIES:
+:ADDED:    <2024-11-10 Sun>
+:END:
 
 https://github.com/rainstormstudio/nerd-icons.el
+
 * DONE Set up gptel
 <2024-12-01 Sun>
 <2024-12-05 Thu>
@@ -56,4 +115,3 @@ etc.
 * DONE Set up TAB for formatting
 
 <2024-12-01 Sun>
-
