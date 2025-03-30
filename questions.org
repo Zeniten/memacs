@@ -1,3 +1,8 @@
+* Should General be loaded before Evil?
+:PROPERTIES:
+:ASKED:    <2025-03-30 Sun>
+:END:
+
 * Why is autocompletion not working?
 :PROPERTIES:
 :ASKED:    <2024-11-10 Sun>
