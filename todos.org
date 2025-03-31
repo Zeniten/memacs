@@ -5,6 +5,10 @@
 
 https://github.com/purcell/whitespace-cleanup-mode
 
+There's also the new package =stripspace.el=:
+https://github.com/jamescherti/stripspace.el
+
+
 * TODO Check out =prodigy=
 :PROPERTIES:
 :ADDED:    <2025-03-30 Sun>
