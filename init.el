@@ -168,3 +168,4 @@
 (require 'setup-typescript)
 (require 'setup-markdown)
 (require 'setup-sql)
+(require 'setup-converters)

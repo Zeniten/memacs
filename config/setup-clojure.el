@@ -1,3 +1,5 @@
+(require 'setup-converters)
+
 (defun memacs/cursor-at-parenthesis-p ()
   "Return non-nil if the cursor is over a parenthesis."
   (let ((syntax (syntax-class (syntax-after (point)))))
@@ -63,10 +65,12 @@
   (memacs/minor-leader-def
     :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
     "'" '(sesman-start :which-key "start sesman")
+    "c" '(:ignore t :which-key "convert")
     "e" '(:ignore t :which-key "evaluation")
     "r" '(:ignore t :which-key "refactor")
     "s" '(:ignore t :which-key "send to repl")
     "sq" '(:ignore t :which-key "quit/restart repl")
+    "ch" '(html-to-hiccup-convert-region :which-key "html->hiccup")
     "eb" '(cider-load-buffer :which-key "eval buffer")
     "ef" '(cider-eval-defun-at-point :which-key "eval defun")
     "el" '(cider-eval-list-at-point :which-key "eval list")
@@ -89,12 +93,5 @@
     "d" '(:ignore t :which-key "debug")
     "df" '(cider-storm-debug-fn :which-key "function")
     "dt" '(cider-storm-toggle-recording :which-key "toggle debugger")))
-
-(use-package html-to-hiccup
-  :config
-  (memacs/minor-leader-def
-    :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
-    "c" '(:ignore t :which-key "convert")
-    "ch" '(html-to-hiccup-convert-region :which-key "html->hiccup")))
 
 (provide 'setup-clojure)
