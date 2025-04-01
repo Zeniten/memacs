@@ -39,6 +39,11 @@
     "/"  '(consult-ripgrep :which-key "search project (consult-ripgrep)") ; Note: "/" directly under SPC
     "ss" '(consult-line :which-key "search current buffer (consult-line)")
 
+    ;; Org
+    "o" '(:ignore t :which-key "org")
+    "or" '(:ignore t :which-key "org-roam")
+    "orf" #'org-roam-node-find
+
     ;; Git
     "g"  '(:ignore t :which-key "git")
     "gs" '(magit-status :which-key "magit status")

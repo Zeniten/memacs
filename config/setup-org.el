@@ -14,11 +14,10 @@
   ;; (org-global-properties
   ;;  '(("Asked" . ":")))
   :config
-  (which-key-add-key-based-replacements
-    ", i" "insert"
-    ", b" "babel")
   (memacs/minor-leader-def
     :keymaps '(org-mode-map)
+    "i" '(:ignore t :which-key "insertion")
+    "b" '(:ignore t :which-key "babel")
     "ib" #'org-insert-structure-template
     "ih" #'org-insert-heading
     "iH" #'org-insert-heading-after-current
@@ -40,7 +39,7 @@
         org-appear-inside-latex t))
 
 (use-package org-roam
-  :defer t
+  :after org
   :custom
   (org-roam-directory (file-truename "~/Dropbox/org/"))
   ;; :bind (("C-c n l" . org-roam-buffer-toggle)
@@ -59,15 +58,13 @@
 
   (advice-add 'org-roam-buffer-toggle :after #'memacs/org-roam-focus-buffer)
 
-  (which-key-add-key-based-replacements
-    ", r" "roam")
   (memacs/minor-leader-def
     :keymaps '(org-mode-map)
+    "r" '(:ignore t :which-key "org-roam")
     "rc" #'org-roam-capture
     "ri" #'org-roam-node-insert
     "rl" #'org-roam-buffer-toggle
-    "rf" #'org-roam-node-find
-    )
+    "rf" #'org-roam-node-find)
 
   ;; Enable Org-Roam's database autosync
   (org-roam-db-autosync-mode))
@@ -81,14 +78,11 @@
   :vc (:url "https://github.com/anki-editor/anki-editor" :rev :newest)
   :defer t
   :config
-  (which-key-add-key-based-replacements
-    ", a" "anki-editor")
   (memacs/minor-leader-def
     :keymaps '(org-mode-map)
+    "a" '(:ignore t :which-key "anki-editor")
     "ai" #'anki-editor-insert-note
-    "ap" #'anki-editor-push-notes
-    )
-  )
+    "ap" #'anki-editor-push-notes))
 
 ;;;; https://github.com/orgtre/ankiorg
 
