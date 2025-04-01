@@ -31,6 +31,14 @@
    'org-babel-load-languages
    '((clojure . t))))
 
+(use-package org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-appear-autosubmarkers t
+        org-appear-autoentities t
+        org-appear-autolinks t
+        org-appear-inside-latex t))
+
 (use-package org-roam
   :defer t
   :custom
