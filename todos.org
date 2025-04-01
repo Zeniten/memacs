@@ -1,3 +1,10 @@
+* TODO Check out =paw=
+:PROPERTIES:
+:ADDED:    <2025-04-01 Tue>
+:END:
+
+https://github.com/chenyanming/paw
+
 * TODO Consider using =whitespace-cleanup-mode=
 :PROPERTIES:
 :ADDED:    <2025-03-30 Sun>
