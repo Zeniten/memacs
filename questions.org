@@ -1,3 +1,15 @@
+* How would you accomplish a similar key-binding setup without General?
+:PROPERTIES:
+:ASKED:    <2025-04-01 Tue>
+:END:
+
+* Am I following best practices with General?
+:PROPERTIES:
+:ASKED:    <2025-04-01 Tue>
+:END:
+
+https://github.com/noctuid/general.el?tab=readme-ov-file#best-practices
+
 * Should General be loaded before Evil?
 :PROPERTIES:
 :ASKED:    <2025-03-30 Sun>
