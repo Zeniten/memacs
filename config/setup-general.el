@@ -42,6 +42,7 @@
     ;; Org
     "o" '(:ignore t :which-key "org")
     "or" '(:ignore t :which-key "org-roam")
+    "orc" #'org-roam-capture
     "orf" #'org-roam-node-find
 
     ;; Git
