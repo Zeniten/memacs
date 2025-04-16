@@ -5,3 +5,4 @@
 - https://github.com/mattduck/dotfiles/blob/master/emacs.2023.symlink/init.org
 - https://github.com/LionyxML/emacs-solo
 - https://github.com/corgi-emacs/corgi
+- https://github.com/bbatsov/prelude
