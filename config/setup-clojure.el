@@ -61,6 +61,8 @@
   :hook ((clojure-mode . eglot-ensure)
          (clojurescript-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure))
+  :custom
+  (clojure-toplevel-inside-comment-form t)
   :config
   (memacs/minor-leader-def
     :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
