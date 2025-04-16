@@ -27,10 +27,10 @@
 
 (use-package smartparens
   :defer t
-  :hook ((emacs-lisp-mode . smartparens-mode)
-	 (clojure-mode . smartparens-mode)
-	 (clojurescript-mode . smartparens-mode)
-	 (clojure-mode . smartparens-mode))
+  :hook ((emacs-lisp-mode . smartparens-strict-mode)
+	 (clojure-mode . smartparens-strict-mode)
+	 (clojurescript-mode . smartparens-strict-mode)
+	 (clojurec-mode . smartparens-strict-mode))
   :config
   ;; load default config
   (require 'smartparens-config)
@@ -53,6 +53,12 @@
   (evil-define-key '(normal visual) 'global
     (kbd "M-k") #'memacs/sp-move-sexp-up
     (kbd "M-j") #'memacs/sp-move-sexp-down))
+
+(use-package evil-cleverparens
+ :hook ((emacs-lisp-mode . evil-cleverparens-mode)
+	(clojure-mode . evil-cleverparens-mode)
+	(clojurescript-mode . evil-cleverparens-mode)
+	(clojurec-mode . evil-cleverparens-mode)))
 
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)

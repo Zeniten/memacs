@@ -17,6 +17,9 @@
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
+  :custom
+  ;; https://github.com/emacs-evil/evil-cleverparens?tab=readme-ov-file
+  (evil-move-beyond-eol t)
   :config
   (evil-set-undo-system 'undo-redo)
   (evil-mode 1))
