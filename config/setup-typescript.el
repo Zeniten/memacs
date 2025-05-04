@@ -68,6 +68,7 @@
 
 (use-package css-mode
   :ensure nil
+  :defer t
   :custom
   (css-indent-offset 2))
 

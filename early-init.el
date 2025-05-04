@@ -1,16 +1,9 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Inspiration:
 ;; https://github.com/magnars/emacsd-reboot/blob/main/settings/fast-startup.el
 ;; https://github.com/doomemacs/doomemacs/blob/master/early-init.el
 ;; https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-does-doom-start-up-so-quickly
-
-(setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
-      gc-cons-percentage 0.6)
-
-;; ... your emacs config here ...
-;; Set file-name-handler-alist
-;; TODO Why?
-(setq file-name-handler-alist-original file-name-handler-alist)
-(setq file-name-handler-alist nil)
 
 (blink-cursor-mode -1)        ; disable blinking cursor
 (menu-bar-mode -1)            ; disable menu bar
@@ -44,7 +37,12 @@
 (setq frame-inhibit-implied-resize t
       frame-resize-pixelwise t)
 
-(add-hook 'emacs-startup-hook
-  (lambda ()
-    (setq gc-cons-threshold 16777216 ; 16mb
-          gc-cons-percentage 0.1)))
+(let ((file-name-handler-alist-old file-name-handler-alist))
+  (add-hook 'emacs-startup-hook
+            (lambda ()
+              (setq gc-cons-threshold (* 1024 1024 20))
+              (setq gc-cons-percentage 0.1)
+	      (setq file-name-handler-alist file-name-handler-alist-old)))
+  (setq gc-cons-percentage 0.6)
+  (setq gc-cons-threshold most-positive-fixnum)
+  (setq file-name-handler-alist nil))

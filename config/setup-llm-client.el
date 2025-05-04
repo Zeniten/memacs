@@ -1,8 +1,9 @@
 (use-package gptel
+  :defer t
   :custom
   (gptel-default-mode #'org-mode)
   (gptel-model 'gpt-4o)
-  :config
+  :init
   (memacs/leader-def
     "l" '(:ignore t :which-key "llm")
     "la" 'gptel-add
@@ -11,7 +12,8 @@
     "ls" 'gptel-send))
 
 (use-package aidermacs
-  :config
+  :defer t
+  :init
   (memacs/leader-def
     "le" 'aidermacs-transient-menu))
 

@@ -70,7 +70,8 @@
 
 ;; use use-package
 (require 'use-package)
-(setq use-package-always-ensure t) ; download package if not there
+(setq use-package-always-ensure t
+      use-package-compute-statistics t)
 
 ;; set places to find packages
 (setq package-archives
@@ -84,14 +85,15 @@
 	("MELPA"        . 2)
 	("MELPA Stable" . 1)))
 
-(use-package auto-package-update
-  :custom
-  (auto-package-update-delete-old-versions t)
-  (auto-package-update-hide-results t)
-  (auto-package-update-prompt-before-update t)
-  (auto-package-update-show-preview t)
-  :config
-  (auto-package-update-maybe))
+;; Use `package-upgrade-all' manually instead
+;; (use-package auto-package-update
+;;   :custom
+;;   (auto-package-update-delete-old-versions t)
+;;   (auto-package-update-hide-results t)
+;;   (auto-package-update-prompt-before-update t)
+;;   (auto-package-update-show-preview t)
+;;   :config
+;;   (auto-package-update-maybe))
 
 (use-package vertico
   :config

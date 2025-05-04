@@ -11,6 +11,7 @@
 
 (use-package eglot
   :ensure nil
+  :defer t
   :custom
   (eglot-events-buffer-config '(:size 0 :format full)))
 
