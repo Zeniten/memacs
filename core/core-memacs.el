@@ -87,6 +87,10 @@
 ;;           (define-key map (kbd "C-x w 9") 'winum-select-window-9)
 ;;           map)))
 
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar))
+
 (defun memacs/split-window-right-and-focus ()
   (interactive)
   (split-window-right)

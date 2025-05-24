@@ -33,6 +33,7 @@
     "p"  '(:ignore t :which-key "project")
     "pp" '(project-switch-project :which-key "switch project")
     "pf" '(project-find-file :which-key "find file in project")
+    "pt" '(dired-sidebar-toggle-sidebar :which-key "toggle sidebar")
 
     ;; Search
     "s"  '(:ignore t :which-key "search")
