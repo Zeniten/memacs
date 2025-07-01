@@ -18,13 +18,15 @@
     :keymaps '(org-mode-map)
     "i" '(:ignore t :which-key "insertion")
     "b" '(:ignore t :which-key "babel")
+    "x" '(:ignore t :which-key "text")
     "ib" #'org-insert-structure-template
     "ih" #'org-insert-heading
     "iH" #'org-insert-heading-after-current
     "il" #'org-insert-link
     "in" #'org-add-note
     "it" #'tempel-insert
-    "bd" #'org-babel-demarcate-block)
+    "bd" #'org-babel-demarcate-block
+    "xe" #'org-emphasize)
 
   (org-babel-do-load-languages
    'org-babel-load-languages
