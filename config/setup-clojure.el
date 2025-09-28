@@ -70,11 +70,21 @@
   :custom
   (clojure-toplevel-inside-comment-form t)
   :config
+  ;; https://clojure.org/guides/weird_characters#_discard
+  (defun memacs/discard-next-form ()
+    "Discard the next Clojure form, i.e., prepending #_."
+    (interactive)
+    (save-excursion
+      (clojure-forward-logical-sexp)
+      (backward-sexp)
+      (insert "#_")))
+
   (memacs/minor-leader-def
     :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
     "'" '(sesman-start :which-key "start sesman")
     "c" '(:ignore t :which-key "convert")
     "e" '(:ignore t :which-key "evaluation")
+    "i" '(:ignore t :which-key "insertion")
     "r" '(:ignore t :which-key "refactor")
     "s" '(:ignore t :which-key "send to repl")
     "sq" '(:ignore t :which-key "quit/restart repl")
@@ -83,6 +93,7 @@
     "ef" '(cider-eval-defun-at-point :which-key "eval defun")
     "el" '(cider-eval-list-at-point :which-key "eval list")
     "es" '(cider-eval-sexp-at-point :which-key "eval sexp")
+    "id" '(memacs/discard-next-form :which-key "discard form")
     "rr" '(eglot-rename :which-key "rename")
     "sqq" '(cider-quit :which-key "quit cider")))
 
