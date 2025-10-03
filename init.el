@@ -170,4 +170,5 @@
 (require 'setup-typescript)
 (require 'setup-markdown)
 (require 'setup-sql)
+(require 'setup-typst)
 (require 'setup-converters)
