@@ -3,6 +3,10 @@
   ;; :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode" :branch "develop")
   :vc (:url "https://codeberg.org/meow_king/typst-ts-mode" :rev :newest)
   :mode (("\\.typ\\'" . typst-ts-mode))
+  :config
+  (memacs/minor-leader-def
+    :keymaps '(typst-ts-mode-map)
+    "m" '(typst-ts-tmenu :which-key "menu"))
   )
 
 (provide 'setup-typst)
