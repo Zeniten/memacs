@@ -13,7 +13,9 @@
   :ensure nil
   :defer t
   :custom
-  (eglot-events-buffer-config '(:size 0 :format full)))
+  (eglot-events-buffer-config '(:size 0 :format full))
+  :bind (:map eglot-mode-map
+	      ("M-<return>" . #'eglot-code-actions)))
 
 (use-package evil
   :init
