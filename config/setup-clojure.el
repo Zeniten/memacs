@@ -6,25 +6,6 @@
     (or (eq syntax (car (string-to-syntax "(")))
         (eq syntax (car (string-to-syntax ")"))))))
 
-(defun memacs/sp-move-sexp-up ()
-  "Move the current s-expression up."
-  (interactive)
-  (if (looking-back "(")
-      (message "Cannot move past superior level")
-    (progn (forward-sexp)
-	   (transpose-sexps -1)
-	   (backward-sexp))))
-
-(defun memacs/sp-move-sexp-down ()
-  "Move the current s-expression down."
-  (interactive)
-  (forward-sexp)
-  (if (memacs/cursor-at-parenthesis-p)
-      (progn (message "Cannot move past superior level")
-	     (backward-sexp))
-    (progn (transpose-sexps 1)
-	   (backward-sexp))))
-
 (use-package smartparens
   :defer t
   :hook ((emacs-lisp-mode . smartparens-strict-mode)
@@ -48,11 +29,7 @@
     "ks" '(sp-forward-slurp-sexp :which-key "slurp forward")
     "kS" '(sp-backward-slurp-sexp :which-key "slurp backward")
     "kb" '(sp-forward-barf-sexp :which-key "barf forward")
-    "kB" '(sp-backward-barf-sexp :which-key "barf backward"))
-  
-  (evil-define-key '(normal visual) 'global
-    (kbd "M-k") #'memacs/sp-move-sexp-up
-    (kbd "M-j") #'memacs/sp-move-sexp-down))
+    "kB" '(sp-backward-barf-sexp :which-key "barf backward")))
 
 (use-package evil-cleverparens
  :hook ((emacs-lisp-mode . evil-cleverparens-mode)
