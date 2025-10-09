@@ -87,6 +87,7 @@
     "i" '(:ignore t :which-key "insertion")
     "r" '(:ignore t :which-key "refactor")
     "s" '(:ignore t :which-key "send to repl")
+    "t" '(:ignore t :which-key "test")
     "sq" '(:ignore t :which-key "quit/restart repl")
     "ch" '(html-to-hiccup-convert-region :which-key "html->hiccup")
     "eb" '(cider-load-buffer :which-key "eval buffer")
@@ -95,6 +96,9 @@
     "es" '(cider-eval-sexp-at-point :which-key "eval sexp")
     "id" '(memacs/discard-next-form :which-key "discard form")
     "rr" '(eglot-rename :which-key "rename")
+    "ta" '(cider-test-run-ns-tests :which-key "all")
+    "tn" '(cider-test-run-ns-tests :which-key "namespace")
+    "tr" '(cider-test-rerun-failed-tests :which-key "rerun")
     "sqq" '(cider-quit :which-key "quit cider")))
 
 (use-package cider
