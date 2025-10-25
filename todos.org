@@ -1,3 +1,10 @@
+* TODO Check out =significant-others=
+:PROPERTIES:
+:ADDED:    <2025-10-25 Sat>
+:END:
+
+https://github.com/ovistoica/significant-other.el
+
 * TODO Check out =paw=
 :PROPERTIES:
 :ADDED:    <2025-04-01 Tue>
