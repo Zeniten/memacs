@@ -166,6 +166,7 @@
 (require 'setup-magit)
 (require 'setup-elisp)
 (require 'setup-llm-client)
+(require 'setup-rest-client)
 (require 'setup-clojure)
 (require 'setup-typescript)
 (require 'setup-markdown)

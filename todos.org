@@ -29,21 +29,6 @@ https://github.com/jamescherti/stripspace.el
 
 https://github.com/rejeep/prodigy.el
 
-* TODO Pick a "REST client"
-:PROPERTIES:
-:ADDED:    <2025-03-30 Sun>
-:END:
-
-- https://github.com/pashky/restclient.el
-
-  The classic!
-
-- https://github.com/federicotdn/verb
-
-- https://github.com/JasZhe/hurl-mode
-
-- https://github.com/gregsexton/httprepl.el
-
 * TODO Check out =org-ql= and =org-rifle=
 :PROPERTIES:
 :ADDED:    <2025-03-30 Sun>
@@ -108,6 +93,28 @@ https://github.com/mickeynp/combobulate
 :END:
 
 https://github.com/rainstormstudio/nerd-icons.el
+
+* DONE Pick a "REST client"
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:DONE:     <2025-10-25 Sat>
+:END:
+
+- https://github.com/pashky/restclient.el
+
+  The classic!
+
+- https://github.com/federicotdn/verb
+
+- https://github.com/JasZhe/hurl-mode
+
+- https://github.com/gregsexton/httprepl.el
+
+<2025-10-25 Sat>
+Restclient is back through emacsorphanage:
+https://github.com/emacsorphanage/restclient!
+
+I'll run with this.
 
 * DONE Add =html-to-hiccup=
 :PROPERTIES:
