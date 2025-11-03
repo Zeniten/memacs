@@ -54,6 +54,10 @@
   :config
   (global-evil-quickscope-mode 1))
 
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
+
 (use-package modus-themes
   :custom
   (modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
