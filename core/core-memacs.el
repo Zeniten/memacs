@@ -50,6 +50,10 @@
   :config
   (global-evil-mc-mode 1))
 
+(use-package evil-quickscope
+  :config
+  (global-evil-quickscope-mode 1))
+
 (use-package modus-themes
   :custom
   (modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
