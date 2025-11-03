@@ -81,6 +81,7 @@
 (use-package cider
   :defer t
   :custom
+  (browse-url-browser-function 'eww-browse-url)
   (cider-download-java-sources t)
   (cider-repl-pop-to-buffer-on-connect nil))
 
