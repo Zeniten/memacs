@@ -13,7 +13,15 @@
      "f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7"
      "de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0" default))
  '(nano-modeline-position 'nano-modeline-footer)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(aidermacs anki-editor apheleia auto-dark auto-package-update cider-storm
+	       clojure-ts-mode consult corfu dired-sidebar docker
+	       dockerfile-mode eca eros esup evil-cleverparens evil-collection
+	       evil-mc evil-nerd-commenter evil-quickscope evil-surround
+	       expand-region general git-timemachine gptel html-to-hiccup magit
+	       marginalia modus-themes nodejs-repl orderless org-appear org-roam
+	       restclient skewer-mode sqlformat tempel try typescript-mode
+	       typst-ts-mode vertico web-mode which-key winum))
  '(package-vc-selected-packages
    '((typst-ts-mode :url "https://codeberg.org/meow_king/typst-ts-mode")
      (cider-storm :url "https://github.com/flow-storm/cider-storm")
