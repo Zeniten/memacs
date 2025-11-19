@@ -172,5 +172,6 @@
 (require 'setup-markdown)
 (require 'setup-sql)
 (require 'setup-docker)
+(require 'setup-yaml)
 (require 'setup-typst)
 (require 'setup-converters)

@@ -44,11 +44,6 @@ https://github.com/rejeep/prodigy.el
 
 https://github.com/alphapapa/magit-todos
 
-* TODO Add support for YAML
-:PROPERTIES:
-:ADDED:    <2025-03-30 Sun>
-:END:
-
 * TODO Do I need to remove anything regarding =which-key= now that it's built-in?
 * TODO Set up jet.el
 :PROPERTIES:
@@ -93,6 +88,12 @@ https://github.com/mickeynp/combobulate
 :END:
 
 https://github.com/rainstormstudio/nerd-icons.el
+
+* DONE Add support for YAML
+:PROPERTIES:
+:ADDED:    <2025-03-30 Sun>
+:DONE:     <2025-11-19 Wed>
+:END:
 
 * DONE Pick a "REST client"
 :PROPERTIES:
