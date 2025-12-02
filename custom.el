@@ -4,7 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("6bf350570e023cd6e5b4337a6571c0325cec3f575963ac7de6832803df4d210a"
+   '("fff0dc54ff5a194ba6593d1cce0fbb4fe8cf9da59fcef47f9e06dec6ef11b1fa"
+     "488b82a8d9ace0aea8a6825db144e3c65c4f1ef3e090b618bf311d9cdb513322"
+     "6bf350570e023cd6e5b4337a6571c0325cec3f575963ac7de6832803df4d210a"
      "a9028cd93db14a5d6cdadba789563cb90a97899c4da7df6f51d58bb390e54031"
      "df768cd7947c2f04116090d3df3b6dddfa3633249f477bd5e44a72d83b059961"
      "fd6f696ce0bd8bfdb72c573631e0b0cdc33e6301852d656596617a7bbaf55729"
@@ -13,15 +15,7 @@
      "f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7"
      "de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0" default))
  '(nano-modeline-position 'nano-modeline-footer)
- '(package-selected-packages
-   '(aidermacs anki-editor apheleia auto-dark auto-package-update cider-storm
-	       clojure-ts-mode consult corfu dired-sidebar docker
-	       dockerfile-mode eca eros esup evil-cleverparens evil-collection
-	       evil-mc evil-nerd-commenter evil-quickscope evil-surround
-	       expand-region general git-timemachine gptel html-to-hiccup magit
-	       marginalia modus-themes nodejs-repl orderless org-appear org-roam
-	       restclient skewer-mode sqlformat tempel try typescript-mode
-	       typst-ts-mode vertico web-mode which-key winum))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
    '((typst-ts-mode :url "https://codeberg.org/meow_king/typst-ts-mode")
      (cider-storm :url "https://github.com/flow-storm/cider-storm")
