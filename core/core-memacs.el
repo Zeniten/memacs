@@ -125,7 +125,8 @@
 (use-package auto-dark
   :custom
   (auto-dark-themes '((modus-vivendi-tinted) (modus-operandi-tinted)))
-  :init (auto-dark-mode))
+  :init
+  (auto-dark-mode))
 
 (use-package try)
 
