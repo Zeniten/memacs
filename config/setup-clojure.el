@@ -78,12 +78,33 @@
     "tr" '(cider-test-rerun-failed-tests :which-key "rerun")
     "sqq" '(cider-quit :which-key "quit cider")))
 
+(defun memacs/prefer-eglot-over-cider-completion ()
+  "Remove CIDER completion when both CIDER and Eglot are active."
+  (when (and (bound-and-true-p cider-mode)
+             (bound-and-true-p eglot--managed-mode))
+    (remove-hook 'completion-at-point-functions #'cider-complete-at-point 'local)))
+
 (use-package cider
   :defer t
+  :hook
+  ((cider-mode . memacs/prefer-eglot-over-cider-completion)
+   (eglot-managed-mode . memacs/prefer-eglot-over-cider-completion))
   :custom
   (browse-url-browser-function 'eww-browse-url)
   (cider-download-java-sources t)
-  (cider-repl-pop-to-buffer-on-connect nil))
+  (cider-repl-pop-to-buffer-on-connect nil)
+
+  ;; save files when evaluating them
+  ;; TODO Is there a difference between "load" and "eval" here?
+  (cider-save-file-on-load t)
+
+  ;; re-use dead buffers without asking me about it when there is only one choice
+  (cider-reuse-dead-repls 'auto)
+
+  ;; Use Eglot with clojure-lsp instead:
+  (cider-use-xref nil) ; definitions/references
+  (cider-eldoc-display-for-symbol-at-point nil) ; documentation
+  (cider-completion-use-context nil)) ; completions
 
 (use-package cider-storm
   :after cider

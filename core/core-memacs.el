@@ -118,6 +118,7 @@
 (use-package eldoc
   :ensure nil
   :custom
+  (eldoc-idle-delay 0.1)
   (eldoc-display-functions '(eldoc-display-in-buffer)))
 
 (use-package esup
