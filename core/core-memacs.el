@@ -13,6 +13,7 @@
   :ensure nil
   :defer t
   :custom
+  (eglot-connect-timeout 120)
   (eglot-events-buffer-config '(:size 0 :format full))
   :bind (:map eglot-mode-map
 	      ("M-<return>" . #'eglot-code-actions)))
