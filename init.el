@@ -165,6 +165,7 @@
 (require 'setup-org)
 (require 'setup-magit)
 (require 'setup-elisp)
+(require 'setup-guix)
 (require 'setup-llm-client)
 (require 'setup-rest-client)
 (require 'setup-clojure)
