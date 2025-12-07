@@ -25,6 +25,14 @@
 	    (setq display-line-numbers-type 'relative)
 	    (add-hook 'prog-mode-hook 'display-line-numbers-mode)))
 
+;; Workaround for transient bug with overriding-text-conversion-style
+;; Fixes "Symbol's value as variable is void" error when using transient
+;; (e.g., M-x guix, M-x magit) in certain buffer contexts like Git repos
+;; Define the variable if it doesn't exist in this Emacs build
+(unless (boundp 'overriding-text-conversion-style)
+  (defvar overriding-text-conversion-style nil
+    "Text conversion style override (not present in all Emacs builds)."))
+
 ;; PERF: Shave seconds off startup time by starting the scratch buffer in
 ;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
 ;;   pull in a ton of packages. `doom/open-scratch-buffer' provides a better
