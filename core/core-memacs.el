@@ -124,7 +124,14 @@
   :ensure nil
   :custom
   (eldoc-idle-delay 0.1)
-  (eldoc-display-functions '(eldoc-display-in-buffer)))
+  (eldoc-display-functions '(eldoc-display-in-buffer))
+  :config
+  ;; Auto-focus the eldoc buffer when displayed
+  (advice-add 'eldoc-doc-buffer :after
+              (lambda (&rest _)
+                (when-let ((buf (get-buffer "*eldoc*")))
+                  (when (get-buffer-window buf)
+                    (select-window (get-buffer-window buf)))))))
 
 (use-package esup
   :defer t)
