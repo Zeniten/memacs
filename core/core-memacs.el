@@ -9,6 +9,11 @@
   ;; helping
   (help-window-select t))
 
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x pgtk))
+    (exec-path-from-shell-initialize)))
+
 (use-package eglot
   :ensure nil
   :defer t
