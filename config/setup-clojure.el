@@ -104,10 +104,13 @@
   ;; re-use dead buffers without asking me about it when there is only one choice
   (cider-reuse-dead-repls 'auto)
 
-  ;; Use Eglot with clojure-lsp instead:
-  (cider-use-xref nil) ; definitions/references
-  (cider-eldoc-display-for-symbol-at-point nil) ; documentation
-  (cider-completion-use-context nil)) ; completions
+  ;; Prefer Eglot over CIDER when both are available, but allow CIDER as fallback:
+  ;; (cider-xref-fn-depth 10) ; Run CIDER xref after Eglot (depth 0), so Eglot takes precedence
+  (cider-eldoc-display-for-symbol-at-point nil) ; Use Eglot's eldoc
+  (cider-completion-use-context nil) ; Use Eglot's completion (via hook)
+
+  :config
+  (evil-set-initial-state 'cider-inspector-mode 'emacs))
 
 (use-package cider-storm
   :after cider
