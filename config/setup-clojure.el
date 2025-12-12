@@ -73,9 +73,12 @@
     "es" '(cider-eval-sexp-at-point :which-key "eval sexp")
     "id" '(memacs/discard-next-form :which-key "discard form")
     "rr" '(eglot-rename :which-key "rename")
-    "ta" '(cider-test-run-ns-tests :which-key "all")
+    "ta" '(cider-test-run-project-tests :which-key "all")
+    "tf" '(cider-test-rerun-failed-tests :which-key "failed")
     "tn" '(cider-test-run-ns-tests :which-key "namespace")
     "tr" '(cider-test-rerun-failed-tests :which-key "rerun")
+    "ts" '(cider-test-show-report :which-key "show report")
+    "tt" '(cider-test-run-test :which-key "test")
     "sqq" '(cider-quit :which-key "quit cider")))
 
 (defun memacs/prefer-eglot-over-cider-completion ()
