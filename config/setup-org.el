@@ -1,18 +1,17 @@
+(defun memacs/org-mode-setup ()
+  "Configure org-mode buffer settings."
+  (setq-local fill-column 80)
+  (auto-fill-mode 1)
+  (add-hook 'before-save-hook #'whitespace-cleanup nil t))
+
 (use-package org
   :defer t
-  :hook
-  (org-mode . (lambda ()
-                (setq-local fill-column 80) ; Set fill-column locally for Org-mode
-                (auto-fill-mode 1)
-                (add-hook 'before-save-hook #'whitespace-cleanup nil t)))
+  :hook (org-mode . memacs/org-mode-setup)
   :custom
   (org-startup-folded t)
   (org-startup-indented t)
   (org-pretty-entities t)
   (org-hide-emphasis-markers t)
-  ;; doesn't work:
-  ;; (org-global-properties
-  ;;  '(("Asked" . ":")))
   :config
   (memacs/minor-leader-def
     :keymaps '(org-mode-map)
