@@ -22,6 +22,12 @@
       ring-bell-function 'ignore        ; quiet
       )
 
+;; Native compilation settings
+(when (and (fboundp 'native-comp-available-p)
+           (native-comp-available-p))
+  (setq native-comp-async-report-warnings-errors nil
+        native-comp-deferred-compilation t))
+
 ;; (run-with-idle-timer
 ;;    5 nil
 ;;    (lambda ()
