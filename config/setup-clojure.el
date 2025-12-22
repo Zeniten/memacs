@@ -16,6 +16,7 @@
   ;; load default config
   (require 'smartparens-config)
   (memacs/leader-def
+    :keymaps 'smartparens-strict-mode-map
     "k"  '(:ignore t :which-key "lisp")
     "kw" '(sp-wrap-round :which-key "wrap round")
     "k(" '(sp-wrap-round :which-key "wrap round (")
