@@ -17,9 +17,7 @@
 ;; start emacs in fullscreen
 (add-hook 'emacs-startup-hook 'toggle-frame-maximized)
 
-
-;; TODO Set only for certain modes
-
+;; Display relative line numbers in prog-mode
 (add-hook 'after-init-hook
 	  (lambda ()
 	    (setq display-line-numbers-type 'relative)
@@ -44,23 +42,43 @@
 ;; default vaule.
 (setq-default fill-column 80)
 
+;; Use EWW for in-Emacs browsing (e.g., cider-javadoc)
+(setq browse-url-browser-function 'eww-browse-url)
+
 ;; Fonts
-;; (set-face-attribute 'default nil :font "Fira Code"
-;;				 :height 113)
 (add-hook 'after-init-hook
 	  (lambda ()
 	    (set-face-attribute 'default nil :font "Fira Code" :height 113)))
 
+;; Enable ligatures for Fira Code (Emacs 29+)
+(when (fboundp 'global-ligature-mode)
+  (use-package ligature
+    :ensure nil
+    :config
+    (ligature-set-ligatures
+     'prog-mode
+     '("--" "---" "==" "===" "!=" "!==" "=!=" "<=" ">="
+       "&&" "&&&" "||" "||=" "++" "+++" "***"
+       "##" "###" "####" "#{" "#[" "#(" "#?" "#_"
+       "<-" "->" "->>" "<<-" "<-<" "-<<" ">->"
+       "<==" "==>" "=>>" ">=>" "<==>" "<=>"
+       "<|" "|>" "<|>" "||>" "<||" "|||>" "<|||"
+       "::" ":::" "::=" ":=" ":>" ":<"
+       ".." "..." ".=" ".-" "..<"
+       "/*" "*/" "//" "///" "/=" "**"))
+    (global-ligature-mode t)))
+
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
-;; TODO use-short-answers
-(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-short-answers t)
 
 ;; Revert buffers when the underlying file has changed
-;; TODO Disable lock files?
 (global-auto-revert-mode 1)
 
 ;; Revert Dired and other buffers
 (setq global-auto-revert-non-file-buffers t)
+
+;; Disable lock files (recommended for single-user systems)
+(setq create-lockfiles nil)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
@@ -69,12 +87,6 @@
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
 		 (concat user-emacs-directory "backups")))))
-
-					;(defvar space-map (make-sparse-keymap)
-					;  "Keymap for SPC commands.")
-
-					;(define-key space-map (kbd "gs") 'magit-status)
-					;(global-set-key (kbd "SPC") space-map)
 
 ;; use use-package
 (require 'use-package)
@@ -93,21 +105,21 @@
 	("MELPA"        . 2)
 	("MELPA Stable" . 1)))
 
-;; Use `package-upgrade-all' manually instead
-;; (use-package auto-package-update
-;;   :custom
-;;   (auto-package-update-delete-old-versions t)
-;;   (auto-package-update-hide-results t)
-;;   (auto-package-update-prompt-before-update t)
-;;   (auto-package-update-show-preview t)
-;;   :config
-;;   (auto-package-update-maybe))
-
 (use-package vertico
   :config
   (define-key vertico-map (kbd "C-j") #'vertico-next)
   (define-key vertico-map (kbd "C-k") #'vertico-previous)
   (vertico-mode 1))
+
+;; Vertico directory extension for better file path navigation
+(use-package vertico-directory
+  :ensure nil
+  :after vertico
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 ;; Save minibuffer history
 (use-package savehist
@@ -164,8 +176,23 @@
   :config
   (recentf-mode 1))
 
-;; Example configuration for Consult
-(use-package consult)
+;; Enhanced Consult configuration
+(use-package consult
+  :init
+  ;; Use Consult for xref (better jump-to-definition UI)
+  (setq xref-show-xrefs-function #'consult-xref
+        xref-show-definitions-function #'consult-xref)
+
+  ;; Configure preview
+  (setq consult-preview-key 'any
+        consult-narrow-key "<")
+
+  :config
+  ;; Project root function for project-aware completions
+  (setq consult-project-function
+        (lambda (_)
+          (when-let ((project (project-current)))
+            (project-root project)))))
 
 (require 'core-memacs)
 (require 'setup-general)

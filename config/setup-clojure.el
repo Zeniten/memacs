@@ -6,12 +6,22 @@
     (or (eq syntax (car (string-to-syntax "(")))
         (eq syntax (car (string-to-syntax ")"))))))
 
+;; 1. Loading control: :disabled, :if, :when, :unless, :after, :defer, :demand
+;; 2. Autoloading triggers: :bind, :mode, :interpreter, :magic, :hook, :commands
+;; 3. Customization: :custom, :custom-face
+;; 4. Pre-load code: :preface, :init
+;; 5. Post-load code: :config
+
+;; Clojure mode lists for reuse
+(defvar memacs/clojure-modes '(clojure-mode clojurescript-mode clojurec-mode)
+  "List of Clojure-related major modes.")
+
+(defvar memacs/clojure-mode-maps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+  "List of Clojure-related mode keymaps.")
+
 (use-package smartparens
   :defer t
-  :hook ((emacs-lisp-mode . smartparens-strict-mode)
-	 (clojure-mode . smartparens-strict-mode)
-	 (clojurescript-mode . smartparens-strict-mode)
-	 (clojurec-mode . smartparens-strict-mode))
+  :hook (((emacs-lisp-mode clojure-mode clojurescript-mode clojurec-mode) . smartparens-strict-mode))
   :config
   ;; load default config
   (require 'smartparens-config)
@@ -33,21 +43,17 @@
     "kB" '(sp-backward-barf-sexp :which-key "barf backward")))
 
 (use-package evil-cleverparens
- :hook ((emacs-lisp-mode . evil-cleverparens-mode)
-	(clojure-mode . evil-cleverparens-mode)
-	(clojurescript-mode . evil-cleverparens-mode)
-	(clojurec-mode . evil-cleverparens-mode)))
+ :hook (((emacs-lisp-mode clojure-mode clojurescript-mode clojurec-mode) . evil-cleverparens-mode)))
 
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)
          ("\\.cljs\\'" . clojurescript-mode)
          ("\\.cljc\\'" . clojurec-mode))
-  :hook ((clojure-mode . eglot-ensure)
-         (clojurescript-mode . eglot-ensure)
-         (clojurec-mode . eglot-ensure))
+  :hook (((clojure-mode clojurescript-mode clojurec-mode) . eglot-ensure))
   :custom
   (clojure-toplevel-inside-comment-form t)
   :config
+
   ;; https://clojure.org/guides/weird_characters#_discard
   (defun memacs/discard-next-form ()
     "Discard the next Clojure form, i.e., prepending #_."
@@ -58,7 +64,7 @@
       (insert "#_")))
 
   (memacs/minor-leader-def
-    :keymaps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+    :keymaps memacs/clojure-mode-maps
     "'" '(sesman-start :which-key "start sesman")
     "c" '(:ignore t :which-key "convert")
     "e" '(:ignore t :which-key "evaluation")
@@ -105,12 +111,12 @@
   ((cider-mode . memacs/prefer-eglot-over-cider-completion)
    (eglot-managed-mode . memacs/prefer-eglot-over-cider-completion))
   :custom
-  (browse-url-browser-function 'eww-browse-url)
   (cider-download-java-sources t)
   (cider-repl-pop-to-buffer-on-connect nil)
 
-  ;; save files when evaluating them
-  ;; TODO Is there a difference between "load" and "eval" here?
+  ;; Save files before loading into REPL
+  ;; Note: "load" (cider-load-buffer) saves the file first, then loads it into the REPL.
+  ;; "eval" functions (cider-eval-*) evaluate the current buffer state without saving.
   (cider-save-file-on-load t)
 
   ;; re-use dead buffers without asking me about it when there is only one choice
@@ -129,7 +135,7 @@
   :vc (:url "https://github.com/flow-storm/cider-storm" :rev :newest)
   :config
   (memacs/minor-leader-def
-    :keymaps '(clojure-mode-map clojurescript-mode-map)
+    :keymaps memacs/clojure-mode-maps
     "d" '(:ignore t :which-key "debug")
     "df" '(cider-storm-debug-fn :which-key "function")
     "dt" '(cider-storm-toggle-recording :which-key "toggle debugger")))
