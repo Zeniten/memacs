@@ -61,6 +61,17 @@
     "'" '(sesman-start :which-key "start sesman")
     "c" '(:ignore t :which-key "convert")
     "e" '(:ignore t :which-key "evaluation")
+
+    "h" '(:ignore t :which-key "help")
+    "ha" '(cider-apropos :which-key "apropos")
+    "hc" '(cider-cheatsheet :which-key "cheatsheet")
+    "hd" '(cider-doc :which-key "doc")
+    "hj" '(cider-javadoc :which-key "javadoc")
+    "hn" '(cider-browse-ns :which-key "browse ns")
+    "hN" '(cider-browse-ns-all :which-key "browse all ns")
+    "hs" '(cider-browse-spec :which-key "browse spec")
+    "hS" '(cider-browse-spec-all :which-key "browse all specs")
+
     "i" '(:ignore t :which-key "insertion")
     "r" '(:ignore t :which-key "refactor")
     "s" '(:ignore t :which-key "send to repl")
