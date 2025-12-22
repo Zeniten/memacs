@@ -105,9 +105,9 @@
   (cider-reuse-dead-repls 'auto)
 
   ;; Prefer Eglot over CIDER when both are available, but allow CIDER as fallback:
-  ;; (cider-xref-fn-depth 10) ; Run CIDER xref after Eglot (depth 0), so Eglot takes precedence
+  (cider-xref-fn-depth 90)                      ; Run CIDER xref after Eglot (depth 0), so Eglot takes precedence
   (cider-eldoc-display-for-symbol-at-point nil) ; Use Eglot's eldoc
-  (cider-completion-use-context nil) ; Use Eglot's completion (via hook)
+  (cider-completion-use-context nil)            ; Use Eglot's completion (via hook)
 
   :config
   (evil-set-initial-state 'cider-inspector-mode 'emacs))
