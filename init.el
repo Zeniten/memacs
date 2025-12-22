@@ -50,23 +50,24 @@
 	  (lambda ()
 	    (set-face-attribute 'default nil :font "Fira Code" :height 113)))
 
-;; Enable ligatures for Fira Code (Emacs 29+)
-(when (fboundp 'global-ligature-mode)
-  (use-package ligature
-    :ensure nil
-    :config
-    (ligature-set-ligatures
-     'prog-mode
-     '("--" "---" "==" "===" "!=" "!==" "=!=" "<=" ">="
-       "&&" "&&&" "||" "||=" "++" "+++" "***"
-       "##" "###" "####" "#{" "#[" "#(" "#?" "#_"
-       "<-" "->" "->>" "<<-" "<-<" "-<<" ">->"
-       "<==" "==>" "=>>" ">=>" "<==>" "<=>"
-       "<|" "|>" "<|>" "||>" "<||" "|||>" "<|||"
-       "::" ":::" "::=" ":=" ":>" ":<"
-       ".." "..." ".=" ".-" "..<"
-       "/*" "*/" "//" "///" "/=" "**"))
-    (global-ligature-mode t)))
+(use-package ligature
+  :config
+  (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                       ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                       "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                       "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                       "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                       "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                       "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                       "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                       ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                       "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                       "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                       "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "\\\\" "://"))
+  ;; Enables ligature checks globally in all buffers. You can also do it
+  ;; per mode with `ligature-mode'.
+  (global-ligature-mode t))
 
 ;; Answering yes and no to each question from Emacs can be tedious, a single y or n will suffice.
 (setq use-short-answers t)
