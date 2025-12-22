@@ -1,12 +1,6 @@
 ;; https://www.ovistoica.com/blog/2024-7-05-modern-emacs-typescript-web-tsx-config
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 
-;; TODO Remove now that I got this treesit solution?
-;; (use-package json-mode
-;;   :mode "\\.json\\'"  ;; Automatically use `json-mode` for .json files.
-;;   :config
-;;   (setq js-indent-level 2))
-
 (use-package treesit
   :ensure nil
   :mode (("\\.tsx\\'" . tsx-ts-mode)
@@ -55,7 +49,6 @@
              (js-mode . typescript-ts-mode)
              (js2-mode . typescript-ts-mode)
              (bash-mode . bash-ts-mode)
-             (css-mode . css-ts-mode)
              (json-mode . json-ts-mode)
              (js-json-mode . json-ts-mode)
              (sh-mode . bash-ts-mode)
@@ -63,9 +56,6 @@
     (add-to-list 'major-mode-remap-alist mapping))
   :config
   (memacs/setup-install-grammars))
-
-;; (use-package typescript-ts-mode
-;;   :hook ((typescript-ts-mode . eglot-ensure)))
 
 (use-package css-mode
   :ensure nil

@@ -6,7 +6,6 @@
   :config
   (memacs/minor-leader-def
     :keymaps '(typst-ts-mode-map)
-    "m" '(typst-ts-tmenu :which-key "menu"))
-  )
+    "m" '(typst-ts-tmenu :which-key "menu")))
 
 (provide 'setup-typst)
