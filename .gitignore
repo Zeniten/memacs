@@ -8,6 +8,7 @@ auto-save-list/
 backups/
 bookmarks
 custom.el
+eca/
 eln-cache/
 elpa/
 history

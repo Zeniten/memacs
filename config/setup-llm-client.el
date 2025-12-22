@@ -1,3 +1,6 @@
+(memacs/leader-def
+  "l" '(:ignore t :which-key "llm"))
+
 (use-package gptel
   :defer t
   :custom
@@ -5,16 +8,17 @@
   (gptel-model 'gpt-4o)
   :init
   (memacs/leader-def
-    "l" '(:ignore t :which-key "llm")
-    "la" 'gptel-add
-    "lm" 'gptel-menu
-    "lr" 'gptel-rewrite
-    "ls" 'gptel-send))
+    "lg" '(:ignore t :which-key "gptel")
+    "lga" 'gptel-add
+    "lgm" 'gptel-menu
+    "lgr" 'gptel-rewrite
+    "lgs" 'gptel-send))
 
-(use-package aidermacs
+(use-package eca
   :defer t
   :init
   (memacs/leader-def
-    "le" 'aidermacs-transient-menu))
+    "le" '(:ignore t :which-key "eca")
+    "lem" 'eca))
 
 (provide 'setup-llm-client)
