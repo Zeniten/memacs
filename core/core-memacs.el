@@ -20,8 +20,15 @@
   :custom
   (eglot-connect-timeout 120)
   (eglot-events-buffer-config '(:size 0 :format full))
-  :bind (:map eglot-mode-map
-	      ("M-<return>" . #'eglot-code-actions)))
+  :config
+  (with-eval-after-load 'general
+    (memacs/minor-leader-def
+      :keymaps 'eglot-mode-map
+      "l"  '(:ignore t :which-key "lsp")
+      "lr" '(eglot-rename :which-key "rename")
+      "la" '(eglot-code-actions :which-key "code actions")
+      "lf" '(eglot-format :which-key "format")
+      "lF" '(eglot-format-buffer :which-key "format buffer"))))
 
 (use-package evil
   :init
