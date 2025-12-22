@@ -2,6 +2,9 @@
   :defer t)
 
 (use-package git-timemachine
-  :defer t)
+  :defer t
+  :init
+  (memacs/leader-def
+    "gt" '(git-timemachine :which-key "git time machine")))
 
 (provide 'setup-magit)

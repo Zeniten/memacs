@@ -20,6 +20,7 @@
     "fS" '(evil-write-all :which-key "save all buffers")
     "ff" '(find-file :which-key "find file")
     "fj" '(dired-jump :which-key "jump to directory")
+    "fr" '(consult-recent-file :which-key "recent files")
 
     ;; Quit/Restart
     "q"  '(:ignore t :which-key "quit/restart")
@@ -34,11 +35,16 @@
     "pp" '(project-switch-project :which-key "switch project")
     "pf" '(project-find-file :which-key "find file in project")
     "pt" '(dired-sidebar-toggle-sidebar :which-key "toggle sidebar")
+    "pb" '(project-switch-to-buffer :which-key "project buffer")
+    "pk" '(project-kill-buffers :which-key "kill project buffers")
+    "pd" '(project-dired :which-key "project dired")
 
     ;; Search
     "s"  '(:ignore t :which-key "search")
     "/"  '(consult-ripgrep :which-key "search project (consult-ripgrep)") ; Note: "/" directly under SPC
     "ss" '(consult-line :which-key "search current buffer (consult-line)")
+    "si" '(consult-imenu :which-key "imenu")
+    "so" '(consult-outline :which-key "outline")
 
     ;; Org
     "o" '(:ignore t :which-key "org")
@@ -57,12 +63,15 @@
     "hk" '(describe-key :which-key "describe key")
     "hm" '(describe-mode :which-key "describe mode")
     "hv" '(describe-variable :which-key "describe variable")
+    "hp" '(describe-package :which-key "describe package")
+    "hb" '(describe-bindings :which-key "describe bindings")
 
     ;; Buffer management
     "b"  '(:ignore t :which-key "buffer")
     "bp" '(previous-buffer :which-key "previous buffer")
     "bn" '(next-buffer :which-key "next buffer")
     "bb" '(consult-buffer :which-key "switch buffer (consult)")
+    "bk" '(kill-buffer :which-key "kill buffer")
 
     ;; Window management
     "w"  '(:ignore t :which-key "window")
