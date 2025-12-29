@@ -57,6 +57,10 @@
   :config
   (memacs/setup-install-grammars))
 
+(use-package typescript-ts-mode
+  :ensure nil
+  :hook ((typescript-ts-mode tsx-ts-mode) . eglot-ensure))
+
 (use-package css-mode
   :ensure nil
   :defer t
