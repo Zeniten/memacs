@@ -150,21 +150,6 @@
   :init
   (winum-mode 1))
 
-;; how to achieve: select window 1..9
-;; (with-eval-after-load 'winum
-;;   (setq winum-keymap
-;;         (let ((map (make-sparse-keymap)))
-;;           (define-key map (kbd "C-x w 1") 'winum-select-window-1)
-;;           (define-key map (kbd "C-x w 2") 'winum-select-window-2)
-;;           (define-key map (kbd "C-x w 3") 'winum-select-window-3)
-;;           (define-key map (kbd "C-x w 4") 'winum-select-window-4)
-;;           (define-key map (kbd "C-x w 5") 'winum-select-window-5)
-;;           (define-key map (kbd "C-x w 6") 'winum-select-window-6)
-;;           (define-key map (kbd "C-x w 7") 'winum-select-window-7)
-;;           (define-key map (kbd "C-x w 8") 'winum-select-window-8)
-;;           (define-key map (kbd "C-x w 9") 'winum-select-window-9)
-;;           map)))
-
 (use-package dired-sidebar
   :ensure t
   :commands (dired-sidebar-toggle-sidebar))
