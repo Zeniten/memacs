@@ -27,8 +27,7 @@
       "l"  '(:ignore t :which-key "lsp")
       "lr" '(eglot-rename :which-key "rename")
       "la" '(eglot-code-actions :which-key "code actions")
-      "lf" '(eglot-format :which-key "format")
-      "lF" '(eglot-format-buffer :which-key "format buffer"))))
+      "lf" '(eglot-format-buffer :which-key "format buffer"))))
 
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 (use-package treesit
