@@ -1,21 +1,5 @@
 (require 'setup-converters)
 
-(defun memacs/cursor-at-parenthesis-p ()
-  "Return non-nil if the cursor is over a parenthesis."
-  (let ((syntax (syntax-class (syntax-after (point)))))
-    (or (eq syntax (car (string-to-syntax "(")))
-        (eq syntax (car (string-to-syntax ")"))))))
-
-;; 1. Loading control: :disabled, :if, :when, :unless, :after, :defer, :demand
-;; 2. Autoloading triggers: :bind, :mode, :interpreter, :magic, :hook, :commands
-;; 3. Customization: :custom, :custom-face
-;; 4. Pre-load code: :preface, :init
-;; 5. Post-load code: :config
-
-;; Clojure mode lists for reuse
-(defvar memacs/clojure-modes '(clojure-mode clojurescript-mode clojurec-mode)
-  "List of Clojure-related major modes.")
-
 (defvar memacs/clojure-mode-maps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
   "List of Clojure-related mode keymaps.")
 
