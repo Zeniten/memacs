@@ -101,6 +101,8 @@
   :init
   (evil-collection-init)
   :config
+  (evil-set-initial-state 'Info-mode 'emacs)
+
   ;; Rebind SPC in Dired mode
   (with-eval-after-load 'dired
     (evil-define-key 'normal dired-mode-map
