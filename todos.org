@@ -4,6 +4,7 @@
 :END:
 
 https://github.com/anticomputer/age.el
+https://edmundmiller.dev/posts/org-journal-age
 
 * TODO Check out =significant-others=
 :PROPERTIES:
