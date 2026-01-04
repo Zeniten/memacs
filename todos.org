@@ -1,3 +1,10 @@
+* TODO Check out encryption library =age=
+:PROPERTIES:
+:ADDED:    <2026-01-04 Sun>
+:END:
+
+https://github.com/anticomputer/age.el
+
 * TODO Check out =significant-others=
 :PROPERTIES:
 :ADDED:    <2025-10-25 Sat>
