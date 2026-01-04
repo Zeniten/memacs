@@ -3,8 +3,6 @@
 
 (use-package gptel
   :defer t
-  :custom
-  (gptel-model 'claude-sonnet-4-5-20250929)
   :init
   (memacs/leader-def
     "lg" '(:ignore t :which-key "gptel")
@@ -13,10 +11,10 @@
     "lgr" 'gptel-rewrite
     "lgs" 'gptel-send)
   :config
-  (setq gptel-backend
-        (gptel-make-anthropic "Claude"
-          :stream t
-          :key #'gptel-api-key)))
+  (setq gptel-model 'claude-sonnet-4-5-20250929
+	gptel-backend (gptel-make-anthropic "Claude"
+			:stream t
+			:key #'gptel-api-key)))
 
 (use-package eca
   :defer t
