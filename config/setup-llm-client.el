@@ -4,7 +4,6 @@
 (use-package gptel
   :defer t
   :custom
-  (gptel-default-mode #'org-mode)
   (gptel-model 'claude-sonnet-4-5-20250929)
   :init
   (memacs/leader-def
