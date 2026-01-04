@@ -31,10 +31,6 @@
   (defvar overriding-text-conversion-style nil
     "Text conversion style override (not present in all Emacs builds)."))
 
-;; PERF: Shave seconds off startup time by starting the scratch buffer in
-;;   `fundamental-mode', rather than, say, `org-mode' or `text-mode', which
-;;   pull in a ton of packages. `doom/open-scratch-buffer' provides a better
-;;   scratch buffer anyway.
 (setq sentence-end-double-space nil)
 
 ;; Some variables are buffer-local, so changing them using setq will only change
