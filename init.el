@@ -142,15 +142,6 @@
 	completion-category-defaults nil
 	completion-category-overrides '((file (styles partial-completion)))))
 
-(defun memacs/current-org-level ()
-  "Return current Org heading level or 0 if not in a heading."
-  (or (save-excursion
-	(ignore-errors
-	  (org-back-to-heading t)
-	  (when (looking-at org-outline-regexp)
-	    (- (match-end 0) (match-beginning 0) 1))))
-      0))
-
 ;; LSP servers provides snippets! Some Eglot + TempEL solutions:
 ;; - https://github.com/svaante/lsp-snippet
 ;; - https://github.com/fejfighter/eglot-tempel
