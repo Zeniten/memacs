@@ -35,6 +35,7 @@
     "pp" '(project-switch-project :which-key "switch project")
     "pf" '(project-find-file :which-key "find file in project")
     "pt" '(dired-sidebar-toggle-sidebar :which-key "toggle sidebar")
+    "pa" '(memacs/project-toggle-implementation-test :which-key "toggle impl/test")
     "pb" '(project-switch-to-buffer :which-key "project buffer")
     "pk" '(project-kill-buffers :which-key "kill project buffers")
     "pd" '(project-dired :which-key "project dired")
