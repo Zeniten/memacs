@@ -80,6 +80,7 @@
 
 (require 'core-memacs)
 (require 'setup-font)
+(require 'setup-project)
 (require 'setup-general)
 (require 'setup-lisp)
 
