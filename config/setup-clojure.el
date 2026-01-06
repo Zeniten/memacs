@@ -55,7 +55,10 @@
     "tr" '(cider-test-rerun-failed-tests :which-key "rerun")
     "ts" '(cider-test-show-report :which-key "show report")
     "tt" '(cider-test-run-test :which-key "test")
-    "sqq" '(cider-quit :which-key "quit cider")))
+    "sqq" '(cider-quit :which-key "quit cider")
+
+    "v" '(:ignore t :which-key "view")
+    "vl" #'cider-inspect-last-result))
 
 (defun memacs/prefer-eglot-over-cider-completion ()
   "Remove CIDER completion when both CIDER and Eglot are active."
