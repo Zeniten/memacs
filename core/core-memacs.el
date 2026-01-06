@@ -152,8 +152,15 @@
   (winum-mode 1))
 
 (use-package dired-sidebar
-  :ensure t
-  :commands (dired-sidebar-toggle-sidebar))
+  :custom
+  (dired-sidebar-subtree-line-prefix "•")
+  :commands (dired-sidebar-toggle-sidebar)
+  :hook (dired-sidebar-mode . (lambda ()
+              (unless (file-remote-p default-directory)
+                (auto-revert-mode))))
+  :config
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands))
 
 (defun memacs/split-window-right-and-focus ()
   (interactive)
