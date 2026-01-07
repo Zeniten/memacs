@@ -1,4 +1,4 @@
-* TODO Evaluate `helpful`, an alternative to built-in help
+* TODO Evaluate =helpful=, an alternative to built-in help
 :PROPERTIES:
 :ADDED:    <2026-01-07 Wed>
 :END:
