@@ -3,11 +3,24 @@
 (defvar memacs/clojure-mode-maps '(clojure-mode-map clojurescript-mode-map clojurec-mode-map)
   "List of Clojure-related mode keymaps.")
 
+(defun memacs/clojure-find-references ()
+  "Find references using Eglot (clojure-lsp) for complete indexing.
+Forces Eglot's backend by temporarily overriding xref-backend-functions."
+  (interactive)
+  (if (eglot-managed-p)
+      ;; Force Eglot backend by setting it as the only option
+      (let ((xref-backend-functions '(eglot-xref-backend t)))
+        (call-interactively #'xref-find-references))
+    ;; Fallback to normal xref if Eglot not available
+    (call-interactively #'xref-find-references)))
+
 (use-package clojure-mode
   :mode (("\\.clj\\'" . clojure-mode)
          ("\\.cljs\\'" . clojurescript-mode)
          ("\\.cljc\\'" . clojurec-mode))
-  :hook (((clojure-mode clojurescript-mode clojurec-mode) . eglot-ensure))
+  :hook (((clojure-mode clojurescript-mode clojurec-mode) . eglot-ensure)
+         ((clojure-mode clojurescript-mode clojurec-mode) . (lambda ()
+                                                               (evil-local-set-key 'normal "gr" #'memacs/clojure-find-references))))
   :custom
   (clojure-toplevel-inside-comment-form t)
   :config
@@ -84,7 +97,6 @@
   (cider-reuse-dead-repls 'auto)
 
   ;; Prefer Eglot over CIDER when both are available, but allow CIDER as fallback:
-  (cider-xref-fn-depth 90)                      ; Run CIDER xref after Eglot (depth 0), so Eglot takes precedence
   (cider-eldoc-display-for-symbol-at-point nil) ; Use Eglot's eldoc
   (cider-completion-use-context nil)            ; Use Eglot's completion (via hook)
 
