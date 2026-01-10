@@ -1,3 +1,10 @@
+* TODO Does =eglot-booster= speed up Eglot in complex Clojure repos?
+:PROPERTIES:
+:ADDED:    <2026-01-10 Sat>
+:END:
+
+https://github.com/jdtsmith/eglot-booster
+
 * TODO Can =consult-imenu= categorize in Clojure similar to Emacs Lisp?
 :PROPERTIES:
 :ADDED:    <2026-01-08 Thu>
