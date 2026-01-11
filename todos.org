@@ -1,3 +1,8 @@
+* TODO Fold code like you fold org-mode headings?
+:PROPERTIES:
+:ADDED:    <2026-01-11 Sun>
+:END:
+
 * TODO Does =eglot-booster= speed up Eglot in complex Clojure repos?
 :PROPERTIES:
 :ADDED:    <2026-01-10 Sat>
