@@ -111,6 +111,7 @@ Forces Eglot's backend by temporarily overriding xref-backend-functions."
     :keymaps memacs/clojure-mode-maps
     "d" '(:ignore t :which-key "debug")
     "df" '(cider-storm-debug-fn :which-key "function")
+    "ds" '(cider-storm-storm-start-gui :which-key "start")
     "dt" '(cider-storm-toggle-recording :which-key "toggle debugger")))
 
 (provide 'setup-clojure)
