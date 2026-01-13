@@ -17,6 +17,11 @@
 (use-package eglot
   :ensure nil
   :defer t
+  :hook (eglot-managed-mode . (lambda ()
+				(setq-local eldoc-documentation-functions
+					    (seq-difference eldoc-documentation-functions
+							    '(eglot-signature-eldoc-function
+							      eglot-highlight-eldoc-function)))))
   :custom
   (eglot-connect-timeout 120)
   (eglot-events-buffer-config '(:size 0 :format full))

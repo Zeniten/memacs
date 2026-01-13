@@ -73,17 +73,19 @@ Forces Eglot's backend by temporarily overriding xref-backend-functions."
     "v" '(:ignore t :which-key "view")
     "vl" #'cider-inspect-last-result))
 
-(defun memacs/prefer-eglot-over-cider-completion ()
+(defun memacs/prefer-eglot-over-cider ()
   "Remove CIDER completion when both CIDER and Eglot are active."
   (when (and (bound-and-true-p cider-mode)
              (bound-and-true-p eglot--managed-mode))
-    (remove-hook 'completion-at-point-functions #'cider-complete-at-point 'local)))
+    (remove-hook 'completion-at-point-functions #'cider-complete-at-point 'local)
+    (setq-local eldoc-documentation-functions
+		(delq 'cider-eldoc eldoc-documentation-functions))))
 
 (use-package cider
   :defer t
   :hook
-  ((cider-mode . memacs/prefer-eglot-over-cider-completion)
-   (eglot-managed-mode . memacs/prefer-eglot-over-cider-completion))
+  ((cider-mode . memacs/prefer-eglot-over-cider)
+   (eglot-managed-mode . memacs/prefer-eglot-over-cider))
   :custom
   (cider-download-java-sources t)
   (cider-repl-pop-to-buffer-on-connect nil)
