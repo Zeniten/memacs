@@ -1,7 +1,7 @@
 ;; Idea: go to end of list, call `eros-eval-last-sexp'
 (defun memacs/eval-list-at-point ()
   "Evaluate the top-level list at point, similar to `cider-eval-list-at-point` in Clojure.
-Displays the result in the minibuffer."
+Displays the result inline using eros and in the minibuffer."
   (interactive)
   ;; Ensure we're in a relevant mode
   (when (derived-mode-p 'emacs-lisp-mode)
@@ -17,8 +17,17 @@ Displays the result in the minibuffer."
         (let ((end (point)))
           ;; Evaluate the region and capture the result
           (let ((result (eval (read (buffer-substring-no-properties start end)))))
-            ;; Display the result in the minibuffer
-            (message "Result: %s" result)))))))
+            ;; Display the result inline using eros (formatted as in eros--eval-overlay)
+            (eros--make-result-overlay (format "%S" result)
+              :where end
+              :duration eros-eval-result-duration)
+            ;; Also display in minibuffer with formatting like eval-last-sexp
+            (let ((print-length eval-expression-print-length)
+                  (print-level eval-expression-print-level))
+              (prin1 result t)
+              (let ((str (eval-expression-print-format result)))
+                (when str (princ str t)))
+              result)))))))
 
 (defun memacs/align-lisp-comments ()
   "Align comments marked with ';'."
