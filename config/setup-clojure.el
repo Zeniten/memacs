@@ -77,6 +77,8 @@ Forces Eglot's backend by temporarily overriding xref-backend-functions."
   "Remove CIDER completion when both CIDER and Eglot are active."
   (when (and (bound-and-true-p cider-mode)
              (bound-and-true-p eglot--managed-mode))
+    ;; TODO Do you really want to remove CIDER completion?
+    ;; Maybe CIDER is superior for everything except reference lookup?
     (remove-hook 'completion-at-point-functions #'cider-complete-at-point 'local)
     (setq-local eldoc-documentation-functions
 		(delq 'cider-eldoc eldoc-documentation-functions))))
