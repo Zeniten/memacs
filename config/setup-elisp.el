@@ -1,33 +1,20 @@
-;; Idea: go to end of list, call `eros-eval-last-sexp'
 (defun memacs/eval-list-at-point ()
-  "Evaluate the top-level list at point, similar to `cider-eval-list-at-point` in Clojure.
-Displays the result inline using eros and in the minibuffer."
+  "Evaluate the top-level list at point and display results inline and in minibuffer."
   (interactive)
-  ;; Ensure we're in a relevant mode
-  (when (derived-mode-p 'emacs-lisp-mode)
-    (save-excursion
-      ;; Check if we're inside a list
-      (condition-case nil
-          (backward-up-list) ;; Move to the beginning of the list
-        (scan-error (error "Not inside a list")))
-      ;; Get the boundaries of the list
-      (let ((start (point)))
-        ;; Move to the end
-        (forward-list)
-        (let ((end (point)))
-          ;; Evaluate the region and capture the result
-          (let ((result (eval (read (buffer-substring-no-properties start end)))))
-            ;; Display the result inline using eros (formatted as in eros--eval-overlay)
-            (eros--make-result-overlay (format "%S" result)
-              :where end
-              :duration eros-eval-result-duration)
-            ;; Also display in minibuffer with formatting like eval-last-sexp
-            (let ((print-length eval-expression-print-length)
-                  (print-level eval-expression-print-level))
-              (prin1 result t)
-              (let ((str (eval-expression-print-format result)))
-                (when str (princ str t)))
-              result)))))))
+  (save-excursion
+    (condition-case nil
+        (backward-up-list)
+      (scan-error (error "Not inside a list")))
+    (let* ((start (point))
+           (end (progn (forward-list) (point)))
+           (result (eval (read (buffer-substring-no-properties start end))))
+           (print-length eval-expression-print-length)
+           (print-level eval-expression-print-level))
+      (eros--eval-overlay result end)
+      (prin1 result t)
+      (let ((str (eval-expression-print-format result)))
+        (when str (princ str t)))
+      result)))
 
 (defun memacs/align-lisp-comments ()
   "Align comments marked with ';'."
