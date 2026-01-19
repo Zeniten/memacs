@@ -1,4 +1,5 @@
 (use-package smartparens
+  :pin "MELPA"
   :defer t
   :hook ((emacs-lisp-mode clojure-mode clojurescript-mode clojurec-mode) . smartparens-strict-mode)
   :config
