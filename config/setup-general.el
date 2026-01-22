@@ -22,6 +22,10 @@
     "fj" '(dired-jump :which-key "jump to directory")
     "fr" '(consult-recent-file :which-key "recent files")
 
+    ;; Insertion
+    "i" '(:ignore t :which-key "insert")
+    "is" '(tempel-insert :which-key "snippet")
+
     ;; Quit/Restart
     "q"  '(:ignore t :which-key "quit/restart")
     "qq" '(kill-emacs :which-key "quit emacs")

@@ -2,8 +2,6 @@
 ;; - https://github.com/svaante/lsp-snippet
 ;; - https://github.com/fejfighter/eglot-tempel
 (use-package tempel
-  :bind (("M-+" . tempel-complete)
-	 ("M-*" . tempel-insert))
   :init
   (defun tempel-setup-capf ()
     (setq-local completion-at-point-functions
