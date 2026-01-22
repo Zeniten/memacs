@@ -1,0 +1,5 @@
+;; -*- mode: lisp-data -*-
+
+clojure-mode
+
+(comment "(comment "n> p n>":-)")
