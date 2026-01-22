@@ -66,6 +66,11 @@
 (setq use-package-always-ensure t
       use-package-compute-statistics t)
 
+(use-package diminish
+  :config
+  (eval-after-load 'hideshow
+    '(diminish 'hs-minor-mode)))
+
 ;; set places to find packages
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")

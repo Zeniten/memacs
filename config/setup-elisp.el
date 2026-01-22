@@ -22,6 +22,7 @@
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\);"))
 
 (use-package eros
+  :diminish eros-mode
   :config
   (memacs/minor-leader-def
     :keymaps 'emacs-lisp-mode-map

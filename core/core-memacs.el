@@ -17,6 +17,7 @@
 (use-package eglot
   :ensure nil
   :defer t
+  :diminish eglot--managed-mode
   :hook (eglot-managed-mode . (lambda ()
 				(setq-local eldoc-documentation-functions
 					    (seq-difference eldoc-documentation-functions
@@ -104,6 +105,7 @@
 
 (use-package evil-collection
   :after evil
+  :diminish evil-collection-unimpaired-mode
   :init
   (evil-collection-init)
   :config
@@ -122,6 +124,7 @@
     "gc" #'evilnc-comment-operator))
 
 (use-package evil-mc
+  :diminish evil-mc-mode
   :config
   (global-evil-mc-mode 1))
 
@@ -147,6 +150,7 @@
 
 (use-package which-key
   :ensure nil
+  :diminish which-key-mode
   :init
   (setq which-key-idle-delay 0.4
 	which-key-idle-secondary-delay 0.05)
@@ -183,6 +187,7 @@
 
 (use-package eldoc
   :ensure nil
+  :diminish eldoc-mode
   :custom
   (eldoc-idle-delay 0.1)
   (eldoc-display-functions '(eldoc-display-in-buffer))
@@ -198,6 +203,7 @@
   :defer t)
 
 (use-package auto-dark
+  :diminish auto-dark-mode
   :custom
   (auto-dark-themes '((modus-vivendi-tinted) (modus-operandi-tinted)))
   :init
