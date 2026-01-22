@@ -86,22 +86,37 @@
     "wL" '(evil-window-move-far-right :which-key "move window right")
     "wd" '(delete-window :which-key "delete window")
 
-    ;; Window selection (Winum)
-    "1" '(winum-select-window-1 :which-key "select window 1")
-    "2" '(winum-select-window-2 :which-key "select window 2")
-    "3" '(winum-select-window-3 :which-key "select window 3")
-    "4" '(winum-select-window-4 :which-key "select window 4")
-    "5" '(winum-select-window-5 :which-key "select window 5")
-    "6" '(winum-select-window-6 :which-key "select window 6")
-    "7" '(winum-select-window-7 :which-key "select window 7")
-    "8" '(winum-select-window-8 :which-key "select window 8")
-    "9" '(winum-select-window-9 :which-key "select window 9")
+    ;; Window selection
+    "0" 'winum-select-window-0-or-10
+    "1" 'winum-select-window-1
+    "2" 'winum-select-window-2
+    "3" 'winum-select-window-3
+    "4" 'winum-select-window-4
+    "5" 'winum-select-window-5
+    "6" 'winum-select-window-6
+    "7" 'winum-select-window-7
+    "8" 'winum-select-window-8
+    "9" 'winum-select-window-9
 
     ;; Theme toggle
     "t"  '(:ignore t :which-key "theme")
     "tt" '(modus-themes-toggle :which-key "toggle theme")
 
     ;; Expand region
-    "v" '(er/expand-region :which-key "expand region")))
+    "v" '(er/expand-region :which-key "expand region"))
+
+  ;; Hide winum keybindings from which-key
+  (dolist (fname '("winum-select-window-0-or-10"
+                   "winum-select-window-1"
+                   "winum-select-window-2"
+                   "winum-select-window-3"
+                   "winum-select-window-4"
+                   "winum-select-window-5"
+                   "winum-select-window-6"
+                   "winum-select-window-7"
+                   "winum-select-window-8"
+                   "winum-select-window-9"))
+    (push `((nil . ,fname) . (lambda (kb) nil))
+          which-key-replacement-alist)))
 
 (provide 'setup-general)
