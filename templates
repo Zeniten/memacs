@@ -1,5 +1,27 @@
 ;; -*- mode: lisp-data -*-
 
-clojure-mode
+fundamental-mode
+
+(today (format-time-string "%Y-%m-%d"))
+
+
+clojure-mode clojurescript-mode clojurec-mode
 
 (comment "(comment "n> p n>":-)")
+
+
+org-mode
+
+;; (ideal (concat
+;; 	(make-string (1+ (or (memacs/current-org-level) 0)) ?*) " Identify problem\n"
+;; 	(make-string (1+ (or (memacs/current-org-level) 0)) ?*) " Define goals\n"
+;; 	(make-string (1+ (or (memacs/current-org-level) 0)) ?*) " Explore strategies\n"
+;; 	(make-string (1+ (or (memacs/current-org-level) 0)) ?*) " Anticipate outcomes\n"
+;; 	(make-string (1+ (or (memacs/current-org-level) 0)) ?*) " Learn\n"))
+(ideal (let ((level (1+ (memacs/current-org-level))))
+	 (concat
+          (make-string level ?*) " Identify problem\n"
+          (make-string level ?*) " Define goals\n"
+          (make-string level ?*) " Explore strategies\n"
+          (make-string level ?*) " Anticipate outcomes\n"
+          (make-string level ?*) " Learn\n")))
