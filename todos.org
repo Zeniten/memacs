@@ -1,3 +1,12 @@
+* TODO Check out =mason.el=
+:PROPERTIES:
+:ADDED:    <2026-02-28 Sat>
+:END:
+
+https://github.com/deirn/mason.el
+
+A package manager external tools, like LSP servers, etc.
+
 * TODO Fold code like you fold org-mode headings?
 :PROPERTIES:
 :ADDED:    <2026-01-11 Sun>
