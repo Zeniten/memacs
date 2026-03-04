@@ -87,4 +87,42 @@
 
 ;;;; https://github.com/orgtre/ankiorg
 
+(use-package org-journal
+  :defer t
+  :custom
+  (org-journal-dir "~/Dropbox/org/journal")
+  (org-journal-date-prefix "#+TITLE: ")
+  (org-journal-file-format "%Y-%m-%d.org")
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (defun org-journal-date-format-func (time)
+      "Custom function to insert journal date header,
+and some custom text on a newly created journal file."
+      (let ((buffer-size-null? (= (buffer-size) 0)))
+        (when buffer-size-null?
+          (insert (concat org-journal-date-prefix (format-time-string "%A, %x" time)))
+          (newline)
+          (insert "* Forberedelse")
+          (newline-and-indent)
+          (insert "*Jeg er takknemlig for*")
+          (newline-and-indent)
+          (insert "1. ")
+          (newline)
+          (insert "2. ")
+          (newline)
+          (insert "3. ")
+          (newline)
+          (newline)
+          (insert "* Refleksjon")
+          (newline-and-indent)
+          (insert "*Hva gjorde du dårlig?*")
+          (newline)
+          (newline)
+          (insert "*Hva gjorde du bra?*")
+          (newline-and-indent))))
+
+  (setq org-journal-date-format 'org-journal-date-format-func))
+
 (provide 'setup-org)
