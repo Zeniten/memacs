@@ -1,3 +1,12 @@
+* TODO Set up =rassumfrassum=
+:PROPERTIES:
+:ADDED:    <2026-03-04 Wed>
+:END:
+
+https://github.com/joaotavora/rassumfrassum
+
+Oh, this might got well with =mason.el=!
+
 * TODO Check out =mason.el=
 :PROPERTIES:
 :ADDED:    <2026-02-28 Sat>
